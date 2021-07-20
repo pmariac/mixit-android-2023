@@ -1,0 +1,26 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    apply from: "build-dev-dependencies.gradle"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath projectDependencies.values()
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply from: "build-dev-dependencies.gradle"
+apply from: "build-test-dependencies.gradle"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

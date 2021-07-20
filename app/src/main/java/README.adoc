@@ -1,0 +1,2 @@
+Reprendre https://developer.android.com/training/sync-adapters et les exemples pour initier l'app et la synchro de data
+On commence par s'authentifier et hop

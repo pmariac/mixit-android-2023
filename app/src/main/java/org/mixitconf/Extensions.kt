@@ -1,6 +1,7 @@
 package org.mixitconf
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.view.isVisible
@@ -19,4 +20,16 @@ fun View.hideKeyboard() {
  */
 fun View.show(show: Boolean) {
     visibility = if(show) View.VISIBLE else View.GONE
+}
+
+/**
+ * Extension function to test if an intent package is available
+ */
+fun Context.hasIntentPackage(type: String): Boolean {
+    try {
+        packageManager.getPackageInfo(type, 0)
+    } catch (e: PackageManager.NameNotFoundException) {
+        return false
+    }
+    return true
 }

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools" tools:context=".HomeActivity">
+
+
+    <item
+            android:id="@+id/navigation_twitter"
+            android:icon="@drawable/mxt_icon_twitter_zoom"
+            android:title="@string/title_twitter_link"
+            app:showAsAction="ifRoom|collapseActionView"/>
+
+    <item
+            android:id="@+id/navigation_settings"
+            android:title="@string/title_fragment_settings"
+            app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/navigation_settings2"
+        android:title="Czcie est un test"
+        app:showAsAction="withText"/>
+</menu>

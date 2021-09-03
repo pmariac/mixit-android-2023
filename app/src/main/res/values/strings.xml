@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">MiXiT</string>
+    <string name="app_name">My MiXiT</string>
     <string name="account_type" translatable="false">org.mixitconf</string>
     <string name="account_label" translatable="false">MiXiT conf</string>
 
+    <string name="title_fragment_home">MiXiT</string>
+    <string name="title_fragment_settings">Settings</string>
+    <string name="title_fragment_about">About</string>
+    <string name="title_twitter_link">Our news on Twitter</string>
     <string name="title_activity_login">Sign in</string>
+
     <string name="prompt_email">Email</string>
     <string name="prompt_token">Token</string>
     <string name="prompt_reset_token">I forgot my token</string>
@@ -19,5 +24,26 @@
 
     <string name="info_sent_token">A token was send by email. Please check your mailbox and retry a connection with its token</string>
 
+    <!-- Settings page -->
+    <string name="settings_notification_title">Notification</string>
+    <string name="settings_notification">Talk notification</string>
+    <string name="settings_notification_summary_on">You will receive a notification just before a conference defined as favorite will be start</string>
+    <string name="settings_notification_summary_off">You won\'t receive a notification just before a conference defined as favorite will be start</string>
+
+    <string name="settings_sync_title">Sync</string>
+    <string name="settings_sync_data">Sync talks and speakers</string>
+    <string name="settings_sync_data_summary_on">Talks and speakers will be automatically synchronized  with MiXiT website</string>
+    <string name="settings_sync_data_summary_off">Sync is disabled and you have to use the refresh button to sync talks and speakers with MiXiT website</string>
+    <string name="settings_sync_favorites_speakers">Sync favorites</string>
+    <string name="settings_sync_favorites_summary_on">Favorites defined in this app will be synchronized with MiXiT website. For this feature you need to sign in with your account email.</string>
+    <string name="settings_sync_favorites_summary_off">We only synchronize speakers and talks with our website, and your favorites are only defined on this Android app</string>
+
+    <string name="settings_about_title">About</string>
+    <string name="settings_about_mixit">About MiXiT</string>
+    <string name="settings_about_app">About this app</string>
+
+    <!-- About page -->
+    <string name="settings_about_text">My MiXiT app is here to help you to get the most out of your conference the D day</string>
+    <string name="settings_about_version">Version %s - MiXiT</string>
 
 </resources>

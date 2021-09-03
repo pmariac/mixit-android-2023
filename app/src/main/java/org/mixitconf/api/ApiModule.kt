@@ -32,6 +32,15 @@ val apiModule = module {
         retrofit.create()
     }
 
+    single<TalkApiRepository> {
+        val retrofit = get<Retrofit> {
+            parametersOf(Properties.MIXIT_EVENT_API, get<OkHttpClient>{
+                parametersOf(get<List<Interceptor>>(named("interceptors")), null)
+            })
+        }
+        retrofit.create()
+    }
+
     single(named("interceptors")) {
         listOf(NetworkConnectionInterceptor())
     }

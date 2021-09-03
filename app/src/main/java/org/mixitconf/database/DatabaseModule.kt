@@ -11,9 +11,24 @@ import java.util.*
 val databaseModule = module {
 
     /**
-     * Declare a single instance of [UserDao].
+     * Declare a single instance of [UserRepository].
      */
-    single { get<AppDatabase>().userDao() }
+    single { get<AppDatabase>().userRepository() }
+
+    /**
+     * Declare a single instance of [LinkRepository].
+     */
+    single { get<AppDatabase>().linkRepository() }
+
+    /**
+     * Declare a single instance of [SpeakerRepository].
+     */
+    single { get<AppDatabase>().speakerRepository() }
+
+    /**
+     * Declare a single instance of [TalkRepository].
+     */
+    single { get<AppDatabase>().talkRepository() }
 
     /**
      * Declare a single instance of [AppDatabase].

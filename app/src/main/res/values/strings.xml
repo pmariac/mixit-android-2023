@@ -46,4 +46,45 @@
     <string name="settings_about_text">My MiXiT app is here to help you to get the most out of your conference the D day</string>
     <string name="settings_about_version">Version %s - MiXiT</string>
 
+
+    <!-- Talk format enum labels -->
+    <string name="talk_format_closing_session">Closing session</string>
+    <string name="talk_format_keynote">Keynote</string>
+    <string name="talk_format_keynote_surprise">Surprise keynote</string>
+    <string name="talk_format_random">Random talk</string>
+    <string name="talk_format_talk">Talk</string>
+    <string name="talk_format_workshop">Workshop</string>
+    <string name="talk_format_planning_reception">Reception (breakfast)</string>
+    <string name="talk_format_planning_introduction_session">Session introduction by speakers</string>
+    <string name="talk_format_planning_pause_10">Pause (10 min)</string>
+    <string name="talk_format_planning_pause_25">Pause (25 min)</string>
+    <string name="talk_format_planning_pause_30">Pause (30 min)</string>
+    <string name="talk_format_planning_party">MiXiT Party</string>
+    <string name="talk_format_planning_lunch">Lunch</string>
+    <string name="talk_format_planning_orha_speech">Team introduction</string>
+    <string name="talk_format_planning_day">Day</string>
+
+    <!-- Room name -->
+    <string name="room_amphi1">Lovelace Amphitheatre</string>
+    <string name="room_amphi2">Hamilton Amphitheatre</string>
+    <string name="room_amphic">C Amphitheatre</string>
+    <string name="room_amphid">D Amphitheatre</string>
+    <string name="room_amphik">K Amphitheatre</string>
+    <string name="room1">Gosling Room (S03)</string>
+    <string name="room2">Eich Room (S02)</string>
+    <string name="room3">Nonaka Room (S120)</string>
+    <string name="room4">Dijkstra Room (S121)</string>
+    <string name="room5">Turing Room (S122)</string>
+    <string name="room6">Lovelace Room (S123)</string>
+    <string name="room7">Mezzanine</string>
+    <string name="room8">Salon des symboles</string>
+    <string name="room_outside">Outside in the playground</string>
+    <string name="room_mummy">Milky Way room (S117)</string>
+    <string name="room_speaker">Salle du conseil</string>
+    <string name="room_unknown">Unknown room</string>
+    <string name="room_surprise">Surprise...</string>
+
+
+    <!-- Talk screen -->
+    <string name="talk_time_range">"%1$s from %2$s to %3$s "</string>
 </resources>

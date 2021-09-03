@@ -27,8 +27,9 @@ ext {
     okhttp_version = "4.9.0"
 
     // Other dependencies
-    koin_version= "3.1.2"
-
+    koin_version = "3.1.2"
+    picasso_version = "2.8"
+    txtmark_version = "0.13"
 
     projectDependencies = [
             gradle_plugin: "com.android.tools.build:gradle:$gradle_plugin_version",
@@ -62,6 +63,7 @@ ext {
     ]
 
     networkDependencies = [
+            picasso: "com.squareup.picasso:picasso:$picasso_version",
             retrofit: "com.squareup.retrofit2:retrofit:$retrofit_version",
             moshi: "com.squareup.retrofit2:converter-moshi:$moshi_version",
             moshi_adapter: "com.squareup.moshi:moshi-adapters:$moshi_adapters_version",
@@ -71,7 +73,8 @@ ext {
     thirdPartyDependencies = [
             koin_core: "io.insert-koin:koin-core:$koin_version",
             koin_android: "io.insert-koin:koin-android:$koin_version",
-            koin_androidx_workmanager: "io.insert-koin:koin-androidx-workmanager:$koin_version"
+            koin_androidx_workmanager: "io.insert-koin:koin-androidx-workmanager:$koin_version",
+            txtmark: "com.github.rjeschke:txtmark:$txtmark_version"
     ]
 
     annotationProcessors = [

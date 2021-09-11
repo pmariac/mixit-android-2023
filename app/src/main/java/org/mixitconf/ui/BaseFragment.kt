@@ -1,8 +1,19 @@
 package org.mixitconf.ui
 
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<T : ViewBinding> : Fragment() {
+    private var _binding: T? = null
 
-    fun baseActivity(): BaseActivity = requireActivity() as BaseActivity
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    protected fun setViewBinding(viewBinding: T) {
+        _binding = viewBinding
+    }
+
+    protected val viewBinding: T by lazy { _binding!! }
 }

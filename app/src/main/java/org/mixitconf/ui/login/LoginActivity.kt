@@ -4,13 +4,24 @@ import android.content.Context
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
+import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import org.mixitconf.R
-import org.mixitconf.ui.ActivityWithFragmentParams
-import org.mixitconf.ui.BaseActivityWithFragment
+import org.mixitconf.databinding.ActivityLoginBinding
+import org.mixitconf.ui.BaseActivity
 
-class LoginActivity : BaseActivityWithFragment() {
+class LoginActivity : BaseActivity<ActivityLoginBinding>() {
+    override val navController by lazy {
+        findNavController(R.id.main_nav_host)
+    }
+    override val appBarConfiguration by lazy {
+        AppBarConfiguration.Builder(navController.graph).build()
+    }
+    override val toolbar: Toolbar?
+        get() = null
 
     companion object {
         @JvmStatic
@@ -22,15 +33,15 @@ class LoginActivity : BaseActivityWithFragment() {
             )
     }
 
-    override val params by lazy {
-        ActivityWithFragmentParams(R.layout.activity_login, R.id.fl_login_fragment, LoginFragment())
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        ActivityLoginBinding.inflate(layoutInflater).apply {
+            viewBinding = this
+            setContentView(viewBinding.root)
+            supportFragmentManager.commit { replace(R.id.fl_login_fragment, LoginFragment()) }
+        }
     }
 
-    override val navController by lazy {
-        findNavController(R.id.main_nav_host)
-    }
-    override val appBarConfiguration by lazy {
-        AppBarConfiguration.Builder(navController.graph).build()
-    }
+
 
 }

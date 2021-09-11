@@ -6,26 +6,26 @@ import org.mixitconf.model.Link
 @Dao
 interface LinkRepository {
     @Insert
-    fun create(link: Link)
+    suspend fun create(link: Link)
 
     @Query("select * from Link")
-    fun readAll(): List<Link>
+    suspend fun readAll(): List<Link>
 
     @Query("select * from Link where speakerId = :id")
-    fun readAllBySpeakerId(id: String): List<Link>
+    suspend fun readAllBySpeakerId(id: String): List<Link>
 
     @Query("select * from Link where id = :id")
-    fun readOne(id: String): Link
+    suspend fun readOne(id: String): Link
 
     @Update
-    fun update(link: Link)
+    suspend fun update(link: Link)
 
     @Delete
-    fun delete(link: Link)
+    suspend fun delete(link: Link)
 
     @Query("delete from Link")
-    fun deleteAll()
+    suspend fun deleteAll()
 
     @Query("delete from Link where speakerId=:speakerId")
-    fun deleteBySpeaker(speakerId: String)
+    suspend fun deleteBySpeaker(speakerId: String)
 }

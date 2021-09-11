@@ -8,7 +8,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.parameter.parametersOf
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
-import org.mixitconf.BuildConfig
 import org.mixitconf.Properties
 import org.mixitconf.Properties.DEFAULT_TIMEOUT_SECONDS
 import org.mixitconf.api.adapter.InstantAtUtcJsonAdapter
@@ -63,7 +62,7 @@ val apiModule = module {
         OkHttpClient.Builder().apply {
             connectTimeout(DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
             readTimeout(DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-            if (BuildConfig.DEBUG) {
+            if (Properties.isDevMode()) {
                 addNetworkInterceptor(get<HttpLoggingInterceptor>())
             }
             interceptors?.forEach { addInterceptor(it) }

@@ -4,23 +4,21 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
-import kotlinx.android.synthetic.main.toolbar_top.*
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.viewbinding.ViewBinding
 import org.mixitconf.R
-import org.mixitconf.ui.home.MainActivity
 import org.mixitconf.ui.home.MainFragmentDirections
 import org.mixitconf.ui.home.TwitterIntent
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
 
     abstract val navController: NavController
     abstract val appBarConfiguration: AppBarConfiguration
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    abstract val toolbar: Toolbar?
+    protected lateinit var viewBinding: T
 
     /**
      * We have to wait the activity creation to initialize navigation
@@ -28,19 +26,18 @@ abstract class BaseActivity : AppCompatActivity() {
      */
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        toolbar.setupWithNavController(navController, appBarConfiguration)
-        setSupportActionBar(toolbar)
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            // setLogo(R.drawable.mxt_logo_large)
-            //setDisplayUseLogoEnabled(true)
+
+        if (toolbar != null) {
+            setSupportActionBar(toolbar)
+            supportActionBar?.apply {
+                setDisplayHomeAsUpEnabled(true)
+            }
         }
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-//        if(this is MainActivity) {
-//            finish()
-//        }
         if (!navController.navigateUp()) {
             finish()
         }

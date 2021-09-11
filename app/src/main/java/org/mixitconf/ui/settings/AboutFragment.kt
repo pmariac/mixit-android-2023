@@ -1,16 +1,21 @@
 package org.mixitconf.ui.settings
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_about.*
 import org.mixitconf.BuildConfig
 import org.mixitconf.R
 import org.mixitconf.ui.BaseFragment
+import org.mixitconf.databinding.FragmentAboutBinding
 
-class AboutFragment : BaseFragment() {
+class AboutFragment : BaseFragment<FragmentAboutBinding>() {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+        FragmentAboutBinding.inflate(inflater, container, false).let {
+            setViewBinding(it)
+            viewBinding.root
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +24,7 @@ class AboutFragment : BaseFragment() {
 
     private fun initBuildBumber() {
         val currentVersion = BuildConfig.VERSION_NAME
-        tv_version.text = String.format(getString(R.string.settings_about_version), currentVersion)
+        viewBinding.tvVersion.text = String.format(getString(R.string.settings_about_version), currentVersion)
     }
 
 }

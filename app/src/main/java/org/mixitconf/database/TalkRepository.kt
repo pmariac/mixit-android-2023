@@ -6,26 +6,26 @@ import org.mixitconf.model.entity.Talk
 @Dao
 interface TalkRepository {
     @Insert
-    fun create(talk: Talk)
+    suspend fun create(talk: Talk)
 
     @Query("select * from Talk")
-    fun readAll(): List<Talk>
+    suspend fun readAll(): List<Talk>
 
     @Query("select * from Talk where speakerIds like '%' || :id || '%'")
-    fun readAllBySpeakerId(id: String): List<Talk>
+    suspend fun readAllBySpeakerId(id: String): List<Talk>
 
     @Query("select * from Talk where id=:id")
-    fun readOne(id: String): Talk?
+    suspend fun readOne(id: String): Talk?
 
     @Update
-    fun update(talk: Talk)
+    suspend fun update(talk: Talk)
 
     @Delete
-    fun delete(talk: Talk)
+    suspend fun delete(talk: Talk)
 
     @Query("delete from Talk")
-    fun deleteAll()
+    suspend fun deleteAll()
 
     @Query("delete from Talk where id in (:ids)")
-    fun deleteAllById(ids: List<String>)
+    suspend fun deleteAllById(ids: List<String>)
 }

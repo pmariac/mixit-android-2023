@@ -64,6 +64,15 @@ fun Date.formatToString(format: String = "EEE"): String =
 fun Date.formatTimeToString(format: Int = DateFormat.SHORT): String =
     DateFormat.getTimeInstance(format).format(this)
 
+/**
+ * Add minutes to a date
+ */
+fun Date.addMinutes(amount: Int): Date {
+    val calendar = Calendar.getInstance(Locale.FRANCE)
+    calendar.time = this
+    calendar.add(Calendar.MINUTE, amount)
+    return calendar.time
+}
 
 /**
  * String extension to convert markdown to HTML

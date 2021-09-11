@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+            android:id="@+id/navigation_talk"
+            android:icon="@drawable/mxt_icon_talk"
+            android:title="@string/title_fragment_talks" />
+
+    <item
+            android:id="@+id/navigation_favorites"
+            android:icon="@drawable/mxt_icon_favorite"
+            android:title="@string/title_fragment_favorites" />
+
+    <item
+            android:id="@+id/navigation_speaker"
+            android:icon="@drawable/mxt_icon_speaker"
+            android:title="@string/title_fragment_speakers" />
+
+</menu>

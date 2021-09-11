@@ -14,8 +14,4 @@
             android:title="@string/title_fragment_settings"
             app:showAsAction="withText"/>
 
-    <item
-        android:id="@+id/navigation_settings2"
-        android:title="Czcie est un test"
-        app:showAsAction="withText"/>
 </menu>

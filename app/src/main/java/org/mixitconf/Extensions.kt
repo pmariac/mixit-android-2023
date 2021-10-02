@@ -7,6 +7,7 @@ import android.text.Html.fromHtml
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import com.squareup.picasso.Picasso
 import org.mixitconf.Properties.SPECIAL_SLUG_CHARACTERS
 import org.mixitconf.model.entity.Speaker
@@ -41,6 +42,9 @@ fun Context.hasIntentPackage(type: String): Boolean {
     return true
 }
 
+fun Context.hasPermission(permission: String) =
+    checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
+
 /**
  * Extension fonction to transform a Date in a french time
  */
@@ -51,6 +55,9 @@ val Date.toFrenchTime
         calendar.add(Calendar.HOUR, -2)
         return calendar.time
     }
+
+fun Date.toString(pattern: String): String =
+    SimpleDateFormat(pattern).format(this)
 
 /**
  * Format date in user locale
@@ -99,10 +106,10 @@ fun ImageView.setSpeakerImage(speaker: Speaker) {
     val imageResource = context.resources.getIdentifier(
         speaker.login.toSlug, "drawable", context.applicationInfo.packageName
     )
-    val size = this.resources.getDimension(R.dimen.speaker_image_side).toInt()
+    //val size = this.resources.getDimension(R.dimen.speaker_image_side).toInt()
     Picasso.get()
         .load(if (imageResource > 0) imageResource else R.drawable.mxt_icon_unknown)
-        .resize(size, size)
+        .resize(160, 160)
         .into(this)
 }
 

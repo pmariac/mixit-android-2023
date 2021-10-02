@@ -14,7 +14,7 @@
             app:key="sync_favorites"
             app:summaryOff="@string/settings_sync_favorites_summary_off"
             app:summaryOn="@string/settings_sync_favorites_summary_on"
-            app:title="@string/settings_sync_data" />
+            app:title="@string/settings_sync_favorites" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_notification_title">

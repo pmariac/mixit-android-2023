@@ -33,7 +33,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             buildConfigField "String", "MIXIT_URL", "\"https://mixitconf.org/api/\""
-            buildConfigField "String", "EVENT_API", "\"2020/\""
+            buildConfigField "String", "EVENT_API", "\"2021/\""
             buildConfigField "String", "USER_API", "\"external/\""
 
             def devPropertiesFile = rootProject.file('config-dev.properties')
@@ -47,7 +47,7 @@ android {
         debug {
             // buildConfigField "String", "MIXIT_URL", "\"https://mixitconf-staging.cleverapps.io/api/\""
             buildConfigField "String", "MIXIT_URL", "\"https://mixitconf.org/api/\""
-            buildConfigField "String", "EVENT_API", "\"2020/\""
+            buildConfigField "String", "EVENT_API", "\"2021/\""
             buildConfigField "String", "USER_API", "\"external/\""
 
             def prodPropertiesFile = rootProject.file('config-dev.properties')

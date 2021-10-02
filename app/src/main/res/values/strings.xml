@@ -3,11 +3,6 @@
     <string name="account_type" translatable="false">org.mixitconf</string>
     <string name="account_label" translatable="false">MiXiT conf</string>
 
-    <!-- Event dates -->
-    <string name="event_day1">Wednesday 29th April</string>
-    <string name="event_day2">Thursday 30th April</string>
-
-
     <string name="title_fragment_home">MiXiT</string>
     <string name="title_fragment_settings">Settings</string>
     <string name="title_fragment_about">About</string>
@@ -17,43 +12,11 @@
     <string name="title_twitter_link">Our news on Twitter</string>
     <string name="title_activity_login">Sign in</string>
 
-    <string name="prompt_email">Email</string>
-    <string name="prompt_token">Token</string>
-    <string name="prompt_reset_token">I forgot my token</string>
-    <string name="action_sign_in">Sign in</string>
-
-    <string name="error_invalid_email">Not a valid email.</string>
-    <string name="error_invalid_token">Token must contain only alphanumerics and must be >10 characters.</string>
-    <string name="error_unknown">An unknown error occurred.</string>
-    <string name="error_no_internet">Retry later because your Internet connection is not available.</string>
-    <string name="error_forbidden">This action is forbidden.</string>
-    <string name="error_invalid_credential">Token is invalid.</string>
-    <string name="error_unknown_email">No account is associated to this email address. Use MiXiT conf website to create your account</string>
-
-    <string name="info_sent_token">A token was send by email. Please check your mailbox and retry a connection with its token</string>
-
-    <!-- Settings page -->
-    <string name="settings_notification_title">Notification</string>
-    <string name="settings_notification">Talk notification</string>
-    <string name="settings_notification_summary_on">You will receive a notification just before a conference defined as favorite will be start</string>
-    <string name="settings_notification_summary_off">You won\'t receive a notification just before a conference defined as favorite will be start</string>
-
-    <string name="settings_sync_title">Sync</string>
-    <string name="settings_sync_data">Sync talks and speakers</string>
-    <string name="settings_sync_data_summary_on">Talks and speakers will be automatically synchronized  with MiXiT website</string>
-    <string name="settings_sync_data_summary_off">Sync is disabled and you have to use the refresh button to sync talks and speakers with MiXiT website</string>
-    <string name="settings_sync_favorites_speakers">Sync favorites</string>
-    <string name="settings_sync_favorites_summary_on">Favorites defined in this app will be synchronized with MiXiT website. For this feature you need to sign in with your account email.</string>
-    <string name="settings_sync_favorites_summary_off">We only synchronize speakers and talks with our website, and your favorites are only defined on this Android app</string>
-
-    <string name="settings_about_title">About</string>
-    <string name="settings_about_mixit">About MiXiT</string>
-    <string name="settings_about_app">About this app</string>
-
-    <!-- About page -->
-    <string name="settings_about_text">My MiXiT app is here to help you to get the most out of your conference the D day</string>
-    <string name="settings_about_version">Version %s - MiXiT</string>
-
+    <!-- Event dates -->
+    <string name="event_day1">Tuesday 18th May</string>
+    <string name="event_day2">Wednesday 19th May</string>
+    <string name="event_day3">Thursday 20th May</string>
+    <string name="language_en">En</string>
 
     <!-- Talk format enum labels -->
     <string name="talk_format_closing_session">Closing session</string>
@@ -72,7 +35,7 @@
     <string name="talk_format_planning_orha_speech">Team introduction</string>
     <string name="talk_format_planning_day">Day</string>
 
-    <!-- Room name -->
+    <!-- Room enum labels -->
     <string name="room_amphi1">Lovelace Amphitheatre</string>
     <string name="room_amphi2">Hamilton Amphitheatre</string>
     <string name="room_amphic">C Amphitheatre</string>
@@ -92,16 +55,56 @@
     <string name="room_unknown">Unknown room</string>
     <string name="room_surprise">Surprise...</string>
 
+    <!-- Login page -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_token">Token</string>
+    <string name="prompt_reset_token">I forgot my token</string>
+    <string name="action_sign_in">Sign in</string>
+
+    <string name="error_invalid_email">Not a valid email.</string>
+    <string name="error_invalid_token">Token must contain only alphanumerics and must be >10 characters.</string>
+    <string name="error_unknown">An unknown error occurred.</string>
+    <string name="error_no_internet">Retry later because your Internet connection is not available.</string>
+    <string name="error_no_internet_permission">To use Data synchronization you must give the rights to this application to go on the Internet</string>
+    <string name="error_forbidden">This action is forbidden.</string>
+    <string name="error_invalid_credential">Token is invalid.</string>
+    <string name="error_unknown_email">No account is associated to this email address. Use MiXiT conf website to create your account</string>
+
+    <string name="info_sent_token">A token was send by email. Please check your mailbox and retry a connection with its token</string>
+    <string name="info_sync_data">Data are synchronized</string>
+    <string name="info_sync_start">Data sync is launched in background…</string>
+
+    <!-- Settings page -->
+    <string name="settings_notification_title">Notification</string>
+    <string name="settings_notification">Talk notification</string>
+    <string name="settings_notification_summary_on">You will receive a notification just before a conference defined as favorite will be start</string>
+    <string name="settings_notification_summary_off">You won\'t receive a notification just before a conference defined as favorite will be start</string>
+
+    <string name="settings_sync_title">Sync</string>
+    <string name="settings_sync_data">Sync talks and speakers</string>
+    <string name="settings_sync_data_summary_on">Talks and speakers will be automatically synchronized  with MiXiT website</string>
+    <string name="settings_sync_data_summary_off">Sync is disabled and you have to use the refresh button to sync talks and speakers with MiXiT website</string>
+    <string name="settings_sync_favorites">Sync favorites</string>
+    <string name="settings_sync_favorites_summary_on">Favorites defined in this app will be synchronized with MiXiT website. For this feature you need to sign in with your account email.</string>
+    <string name="settings_sync_favorites_summary_off">We only synchronize speakers and talks with our website, and your favorites are only defined on this Android app</string>
+
+    <string name="settings_about_title">About</string>
+    <string name="settings_about_mixit">About MiXiT</string>
+    <string name="settings_about_app">About this app</string>
+
+    <!-- About page -->
+    <string name="settings_about_text">My MiXiT app is here to help you to get the most out of your conference the D day</string>
+    <string name="settings_about_version">Version %s - MiXiT</string>
+
 
     <!-- Talk screen -->
     <string name="talk_time_range">"%1$s from %2$s to %3$s "</string>
-    <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="talk_topic">Topic</string>
+    <string name="talk_language">Language</string>
+    <string name="talk_language_en">English</string>
+    <string name="talk_language_fr">French</string>
+    <string name="talk_favorite">Marked as favorite</string>
+    <string name="talk_room_detail">%s (cap. %s)</string>
+    <string name="title_synchronize">Synchronize data</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

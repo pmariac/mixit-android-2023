@@ -1,6 +1,7 @@
 package org.mixitconf.service.synchronization
 
 import android.app.Application
+import androidx.room.Transaction
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.mixitconf.service.AppPreferences
@@ -16,6 +17,7 @@ abstract class SynchronizationService<Dto> : KoinComponent {
         enum class Result { Success, Error }
     }
 
+    @Transaction
     inline suspend fun <reified Entity> synchronize(mode: SyncMode) {
         // We need to check user preference to know if he wants to do this job in background
         if (mode == SyncMode.BACKGROUND && !AppPreferences.maySyncDataInBackground) {
@@ -23,7 +25,11 @@ abstract class SynchronizationService<Dto> : KoinComponent {
             return
         }
         runCatching { read() }
-            .onFailure { sendNotification<Entity>(Result.Error) }
+            .onFailure {
+                it.printStackTrace()
+                Timber.e(it)
+                sendNotification<Entity>(Result.Error)
+            }
             .onSuccess { save(it.body() ?: emptyList(), mode) }
     }
 

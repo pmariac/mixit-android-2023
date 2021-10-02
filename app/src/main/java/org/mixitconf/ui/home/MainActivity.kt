@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.mixitconf.R
 import org.mixitconf.databinding.ActivityMainBinding
 import org.mixitconf.ui.BaseActivity
@@ -16,10 +17,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         findNavController(R.id.main_nav_host)
     }
     override val appBarConfiguration by lazy {
-        AppBarConfiguration.Builder(R.id.homeFragment).build()
+        AppBarConfiguration(setOf(
+            R.id.navigation_home,
+            R.id.navigation_talks,
+            R.id.navigation_speakers,
+            R.id.navigation_notifications)
+        )
     }
-    override val toolbar: Toolbar by lazy {
+    override val topToolbar: Toolbar by lazy {
         viewBinding.toolbarTop.toolbar
+    }
+    override val bottomToolbar: BottomNavigationView by lazy {
+        viewBinding.toolbarBottom
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +43,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun enqueueWorkers(context: Context) {
         DataSynchronizationWorker.enqueuePeriodicWorker(context)
     }
+
 
 
 }

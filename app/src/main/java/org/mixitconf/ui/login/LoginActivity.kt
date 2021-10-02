@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.mixitconf.R
 import org.mixitconf.databinding.ActivityLoginBinding
 import org.mixitconf.ui.BaseActivity
@@ -20,8 +21,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     override val appBarConfiguration by lazy {
         AppBarConfiguration.Builder(navController.graph).build()
     }
-    override val toolbar: Toolbar?
-        get() = null
+    override val topToolbar: Toolbar? = null
+    override val bottomToolbar: BottomNavigationView? = null
 
     companion object {
         @JvmStatic

@@ -27,6 +27,7 @@ class DataSynchronizationWorker(
 
     companion object {
         fun enqueuePeriodicWorker(context: Context) {
+            Timber.i("MiXiT Sync period worker is enqueued")
             val request = PeriodicWorkRequestBuilder<DataSynchronizationWorker>(
                 repeatInterval = DATA_SYNC_INTERVAL,
                 repeatIntervalTimeUnit = TimeUnit.valueOf(DATA_SYNC_INTERVAL_TIMEUNIT)

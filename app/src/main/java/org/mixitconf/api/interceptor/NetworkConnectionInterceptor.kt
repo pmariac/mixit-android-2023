@@ -2,6 +2,7 @@ package org.mixitconf.api.interceptor
 
 import android.content.Context
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import okhttp3.Interceptor
 import okhttp3.Protocol
 import okhttp3.Response
@@ -25,7 +26,17 @@ class NetworkConnectionInterceptor : Interceptor {
     }
 
     private fun isInternetAvailable(context: Context?): Boolean {
-        val cm = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager
-        return cm?.activeNetworkInfo?.isConnected == true
+        (context?.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager)?.let { connectivityManager ->
+            val activeNetwork = connectivityManager.activeNetwork ?: return false
+            val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
+            return when {
+                networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                //for other device how are able to connect with Ethernet
+                networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                else -> false
+            }
+        }
+        return false
     }
 }

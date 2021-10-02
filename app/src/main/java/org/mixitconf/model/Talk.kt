@@ -52,12 +52,15 @@ data class Talk(
         get() = end.toFrenchTime.time
 
     val descriptionInMarkdown
-        get() = if (description.isNullOrEmpty()) null else Processor.process(description).toHtml
+        get() = if (description.isNullOrEmpty()) null else Processor.process(description.trim()).toHtml
 
     val summaryInMarkdown
-        get() = if (summary.isEmpty()) "" else Processor.process(summary).toHtml
+        get() = if (summary.isEmpty()) "" else Processor.process(summary.trim()).toHtml
 
-    fun getBgColorDependingOnTime(color: Int): Int =
+    /**
+     * If time is elapsed we return a disabled color
+     */
+    fun getBackgroundColor(color: Int): Int =
         if (Date().time > end.time) R.color.unknown else color
 
     fun getTimeLabel(resources: Resources): String = String.format(

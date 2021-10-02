@@ -3,33 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/navigation_home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="org.mixitconf.ui.home.MainFragment"
         android:label="@string/title_fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_talksFragment"
+            app:destination="@id/navigation_talks" />
+    </fragment>
 
     <fragment
-        android:id="@+id/settingsFragment"
+        android:id="@+id/navigation_settings"
         android:name="org.mixitconf.ui.settings.SettingsFragment"
         android:label="@string/title_fragment_settings">
 
         <action
             android:id="@+id/action_open_about"
-            app:destination="@id/aboutFragment"
-            app:popUpTo="@+id/settingsFragment"/>
+            app:destination="@id/navigation_about"
+            app:popUpTo="@+id/navigation_settings"/>
     </fragment>
 
     <fragment
-        android:id="@+id/aboutFragment"
+        android:id="@+id/navigation_about"
         android:name="org.mixitconf.ui.settings.AboutFragment"
         android:label="@string/title_fragment_about" />
 
 
     <action
         android:id="@+id/action_settingsFragment"
-        app:destination="@id/settingsFragment" />
+        app:destination="@id/navigation_settings" />
+
+
+    <fragment
+        android:id="@+id/navigation_talks"
+        android:name="org.mixitconf.ui.talk.TalksFragment"
+        android:label="@string/title_fragment_talks" >
+    </fragment>
+
+    <action
+        android:id="@+id/action_talksFragment_to_talkDetailFragment"
+        app:destination="@id/navigation_talk_detail" >
+        <argument android:name="talkId" app:argType="string"/>
+    </action>
+
+    <fragment
+        android:id="@+id/navigation_talk_detail"
+        android:name="org.mixitconf.ui.talk.TalkDetailFragment"
+        android:label="@string/title_fragment_talks">
+        <argument
+            android:name="talkId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_speakers"
+        android:name="org.mixitconf.ui.speaker.SpeakersFragment"
+        android:label="@string/title_fragment_speakers"
+        tools:layout="@layout/fragment_speakers" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="org.mixitconf.ui.notifications.NotificationsFragment"
+        android:label="@string/title_fragment_favorites"
+        tools:layout="@layout/fragment_notifications" />
 
 </navigation>

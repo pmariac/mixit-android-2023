@@ -1,6 +1,7 @@
 package org.mixitconf.model.dao
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 import org.mixitconf.model.entity.Talk
 
 @Dao

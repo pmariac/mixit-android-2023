@@ -10,6 +10,11 @@
             app:showAsAction="ifRoom|collapseActionView"/>
 
     <item
+        android:id="@+id/navigation_synchronize"
+        android:title="@string/title_synchronize"
+        app:showAsAction="withText"/>
+
+    <item
             android:id="@+id/navigation_settings"
             android:title="@string/title_fragment_settings"
             app:showAsAction="withText"/>

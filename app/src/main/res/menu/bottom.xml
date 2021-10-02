@@ -3,17 +3,17 @@
 
 
     <item
-            android:id="@+id/navigation_talk"
+            android:id="@+id/navigation_talks"
             android:icon="@drawable/mxt_icon_talk"
             android:title="@string/title_fragment_talks" />
 
     <item
-            android:id="@+id/navigation_favorites"
+            android:id="@+id/navigation_notifications"
             android:icon="@drawable/mxt_icon_favorite"
             android:title="@string/title_fragment_favorites" />
 
     <item
-            android:id="@+id/navigation_speaker"
+            android:id="@+id/navigation_speakers"
             android:icon="@drawable/mxt_icon_speaker"
             android:title="@string/title_fragment_speakers" />
 

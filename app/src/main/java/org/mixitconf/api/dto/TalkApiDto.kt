@@ -6,6 +6,7 @@ import org.mixitconf.model.enums.Room
 import org.mixitconf.model.enums.Language
 import org.mixitconf.model.enums.TalkFormat
 import org.mixitconf.model.enums.Topic
+import java.time.Instant
 import java.util.*
 
 data class TalkApiDto(
@@ -24,7 +25,7 @@ data class TalkApiDto(
     @field:Json(name = "language")
     val language: Language = Language.FRENCH,
     @field:Json(name = "addedAt")
-    val addedAt: Date,
+    val addedAt: String,
     @field:Json(name = "description")
     val description: String?,
     @field:Json(name = "topic")
@@ -32,9 +33,9 @@ data class TalkApiDto(
     @field:Json(name = "room")
     val room: String?,
     @field:Json(name = "start")
-    val start: Date?,
+    val start: String?,
     @field:Json(name = "end")
-    val end: Date?
+    val end: String?
 ){
     fun toEntity() = Talk(
         id,
@@ -47,8 +48,8 @@ data class TalkApiDto(
         description,
         Topic.of(topic),
         Room.of(room),
-        start!!,
-        end!!
+        Date(Instant.parse("${start?.replace("/", "-")}.000Z").toEpochMilli()),
+        Date(Instant.parse("${end?.replace("/", "-")}.000Z").toEpochMilli())
     )
 }
 

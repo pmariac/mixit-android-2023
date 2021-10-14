@@ -29,7 +29,7 @@ val uiModule = module {
      * Declare a single instance of [SpeakersViewModel].
      */
     viewModel {
-        SpeakersViewModel(get())
+        SpeakersViewModel(get(), get())
     }
 }
 

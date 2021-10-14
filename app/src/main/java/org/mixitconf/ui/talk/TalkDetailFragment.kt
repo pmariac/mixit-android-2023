@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.R
 import org.mixitconf.databinding.FragmentTalkDetailBinding
 import org.mixitconf.model.entity.Speaker
@@ -99,6 +101,7 @@ class TalkDetailFragment : BaseFragment<FragmentTalkDetailBinding>() {
     }
 
     private fun openSpeaker(speaker: Speaker) {
-        TODO("Not yet implemented")
+        val directions = MainNavigationGraphDirections.actionSpeakersFragmentToSpeakerDetailFragment(speaker.login)
+        findNavController().navigate(directions)
     }
 }

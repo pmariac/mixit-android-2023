@@ -5,10 +5,12 @@ import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentSpeakersBinding
 import org.mixitconf.model.entity.Speaker
 import org.mixitconf.ui.BaseFragment
@@ -47,6 +49,7 @@ class SpeakersFragment : BaseFragment<FragmentSpeakersBinding>() {
     }
 
     private fun openSpeaker(speaker: Speaker) {
-//        TODO("Not yet implemented")
+        val directions = MainNavigationGraphDirections.actionSpeakersFragmentToSpeakerDetailFragment(speaker.login)
+        findNavController().navigate(directions)
     }
 }

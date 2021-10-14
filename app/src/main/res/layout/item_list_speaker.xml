@@ -16,9 +16,9 @@
         android:layout_width="@dimen/image_list_size"
         android:layout_height="@dimen/image_list_size"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:contentDescription="@string/title_fragment_speakers"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mxt_icon_unknown" />
@@ -48,7 +48,6 @@
         android:ellipsize="end"
         android:maxLines="3"
         android:text="@string/title_fragment_speakers"
-        android:textColor="@color/colorSecondaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/speaker_image"
         app:layout_constraintTop_toBottomOf="@+id/speaker_name" />

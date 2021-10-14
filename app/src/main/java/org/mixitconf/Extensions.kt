@@ -106,10 +106,11 @@ fun ImageView.setSpeakerImage(speaker: Speaker) {
     val imageResource = context.resources.getIdentifier(
         speaker.login.toSlug, "drawable", context.applicationInfo.packageName
     )
-    //val size = this.resources.getDimension(R.dimen.speaker_image_side).toInt()
+    val size = this.resources.getDimension(R.dimen.image_list_size).toInt()
     Picasso.get()
-        .load(if (imageResource > 0) imageResource else R.drawable.mxt_icon_unknown)
-        .resize(160, 160)
+        .load(R.drawable.mxt_icon_unknown)
+        .placeholder(R.drawable.mxt_icon_unknown)
+        .resize(size, size)
         .into(this)
 }
 

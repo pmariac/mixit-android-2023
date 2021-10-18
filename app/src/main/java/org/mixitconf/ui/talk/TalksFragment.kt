@@ -16,11 +16,11 @@ import org.mixitconf.model.entity.Talk
 import org.mixitconf.model.enums.TalkFormat
 import org.mixitconf.ui.BaseFragment
 
-class TalksFragment : BaseFragment<FragmentTalksBinding>() {
+open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
 
-    private val viewModel: TalksViewModel by sharedViewModel()
+    protected val viewModel: TalksViewModel by sharedViewModel()
 
-    private val talksAdpater = TalksAdapter().apply {
+    protected val talksAdpater = TalksAdapter().apply {
         onItemClickListener = { talk, _ -> openTalk(talk) }
         stateRestorationPolicy = PREVENT_WHEN_EMPTY
     }
@@ -38,13 +38,14 @@ class TalksFragment : BaseFragment<FragmentTalksBinding>() {
     }
 
     private fun initRecyclerView() {
+        viewBinding.txtNoFavorite.visibility = View.INVISIBLE
         viewBinding.rvTalks.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = talksAdpater
         }
     }
 
-    private fun search() {
+    open protected fun search() {
         viewModel.search().observe(viewLifecycleOwner, { talks ->
             talksAdpater.setItems(talks)
         })

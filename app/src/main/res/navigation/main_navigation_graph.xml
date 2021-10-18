@@ -80,9 +80,9 @@
         tools:layout="@layout/fragment_speakers" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="org.mixitconf.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_favorites"
+        android:name="org.mixitconf.ui.talk.FavoritesTalksFragment"
         android:label="@string/title_fragment_favorites"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_talks" />
 
 </navigation>

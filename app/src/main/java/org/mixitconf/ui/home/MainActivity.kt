@@ -21,7 +21,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             R.id.navigation_home,
             R.id.navigation_talks,
             R.id.navigation_speakers,
-            R.id.navigation_notifications)
+            R.id.navigation_favorites)
         )
     }
     override val topToolbar: Toolbar by lazy {
@@ -43,7 +43,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun enqueueWorkers(context: Context) {
         DataSynchronizationWorker.enqueuePeriodicWorker(context)
     }
-
-
 
 }

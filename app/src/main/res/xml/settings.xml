@@ -10,11 +10,11 @@
             app:summaryOn="@string/settings_sync_data_summary_on"
             app:title="@string/settings_sync_data" />
 
-        <SwitchPreferenceCompat
-            app:key="sync_favorites"
-            app:summaryOff="@string/settings_sync_favorites_summary_off"
-            app:summaryOn="@string/settings_sync_favorites_summary_on"
-            app:title="@string/settings_sync_favorites" />
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="sync_favorites"-->
+<!--            app:summaryOff="@string/settings_sync_favorites_summary_off"-->
+<!--            app:summaryOn="@string/settings_sync_favorites_summary_on"-->
+<!--            app:title="@string/settings_sync_favorites" />-->
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_notification_title">
@@ -27,7 +27,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="about_title">
+    <PreferenceCategory app:title="@string/title_fragment_about">
         <Preference
             android:key="about_app_mixit"
             android:title="@string/settings_about_mixit"

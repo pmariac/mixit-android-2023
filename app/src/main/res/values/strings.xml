@@ -13,6 +13,9 @@
     <string name="title_activity_login">Sign in</string>
 
     <!-- Event dates -->
+    <string name="event_welcome">The conference from Lyon with crêpes and love</string>
+    <string name="event_dates">18th &amp; 19th May 2020</string>
+
     <string name="event_day1">Tuesday 18th May</string>
     <string name="event_day2">Wednesday 19th May</string>
     <string name="event_day3">Thursday 20th May</string>

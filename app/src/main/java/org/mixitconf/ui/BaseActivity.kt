@@ -38,6 +38,7 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
             setSupportActionBar(topToolbar)
             supportActionBar?.apply {
                 setDisplayHomeAsUpEnabled(true)
+                setDisplayShowHomeEnabled(true)
             }
         }
         if(bottomToolbar != null) {

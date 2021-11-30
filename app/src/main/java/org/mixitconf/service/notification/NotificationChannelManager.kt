@@ -49,6 +49,10 @@ object NotificationChannelManager {
         showNotification(context, createNotificationId(), R.string.sync_notification_channel_id, data)
     }
 
+    fun createPlanningNotification(context: Context, data: NotificationOption) {
+        showNotification(context, createNotificationId(), R.string.planning_notification_channel_id, data)
+    }
+
     @VisibleForTesting
     fun getPendingIntent(context: Context, intent: Intent): PendingIntent? {
         return TaskStackBuilder.create(context).run {

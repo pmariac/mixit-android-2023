@@ -6,6 +6,7 @@ import android.app.PendingIntent.FLAG_CANCEL_CURRENT
 import android.app.PendingIntent.FLAG_IMMUTABLE
 import android.content.Context
 import android.content.Intent
+import org.mixitconf.Properties
 import org.mixitconf.model.Talk
 import org.mixitconf.receivers.PlanningAlarmReceiver
 import org.mixitconf.service.AppPreferences
@@ -30,7 +31,7 @@ class PlanningAlarmService(private val context: Context) {
         PendingIntent.getBroadcast(
             context,
             talk.id!!.toInt(),
-            Intent(context, PlanningAlarmReceiver::class.java),
+            Intent(context, PlanningAlarmReceiver::class.java).putExtra(Properties.TALK_ID, talk.id),
             FLAG_IMMUTABLE or FLAG_CANCEL_CURRENT
         )
 

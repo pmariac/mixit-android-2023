@@ -61,11 +61,7 @@ class TalkDetailFragment : BaseFragment<FragmentTalkDetailBinding>() {
                 fragmentTalkDetailHeader.apply {
                     tvTalkName.text = talk.title
                     tvTalkTime.text = talk.getTimeLabel(resources)
-                    tvTalkRoom.text = talk.room.let {
-                        getString(
-                            R.string.talk_room_detail, getString(it.i18nId), it.capacity.toString()
-                        )
-                    }
+                    tvTalkRoom.text = talk.roomName(resources)
                     tvMarkedAsFavorite.visibility = if (talk.favorite) View.VISIBLE else View.GONE
                 }
 

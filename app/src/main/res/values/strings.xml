@@ -127,4 +127,6 @@
     <string name="new_ticket_comment_notification_channel_description">Push notifications for ticket updates</string>
     <string name="fairphone_notification_channel_id" translatable="false">fairphone_notifications</string>
     <string name="fairphone_notification_channel_name" translatable="false">Fairphone</string>
+
+    <string name="planning_notification_description">This talk will start in few minutes in room %s</string>
 </resources>

@@ -2,6 +2,7 @@ package org.mixitconf
 
 object Properties {
 
+    const val TALK_ID = "TALK_ID"
     const val TALK_LOCALDATE_FORMAT = "yyyy/MM/dd"
     const val TALK_DATE_FORMAT = "yyyy/MM/dd'T'HH:mm:ss"
     const val MIXIT_EVENT_API = BuildConfig.MIXIT_URL + BuildConfig.EVENT_API

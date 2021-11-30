@@ -1,5 +1,6 @@
 package org.mixitconf.model
 
+import android.content.Context
 import android.content.res.Resources
 import androidx.room.Entity
 import androidx.room.Ignore
@@ -70,4 +71,8 @@ data class Talk(
         startTime.formatTimeToString(),
         endTime.formatTimeToString()
     )
+
+    fun roomName(resources: Resources): String = room.let {
+        resources.getString(R.string.talk_room_detail, resources.getString(it.i18nId), it.capacity.toString())
+    }
 }

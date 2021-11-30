@@ -42,7 +42,7 @@ open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
         }
     }
 
-    open protected fun search() {
+    protected open fun search() {
         viewModel.search().observe(viewLifecycleOwner, { talks ->
             talksAdpater.setItems(talks)
         })

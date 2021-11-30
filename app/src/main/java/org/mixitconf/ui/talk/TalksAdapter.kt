@@ -23,7 +23,7 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
 
         override fun bindItem(item: Talk) {
             viewBinding.apply {
-                tvTalkItemName.setText(item.title)
+                tvTalkItemName.text = item.title
                 tvTalkItemTime.text = item.getTimeLabel(context.resources)
 
                 when (item.format) {

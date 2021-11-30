@@ -7,7 +7,7 @@ import org.koin.core.component.inject
 
 
 object AppPreferences : KoinComponent {
-    val prefs: SharedPreferences by inject()
+    private val prefs: SharedPreferences by inject()
 
     const val KEY_FAVORITE_NOTIFICATION = "talk_notification"
     const val KEY_DATA = "sync_data"

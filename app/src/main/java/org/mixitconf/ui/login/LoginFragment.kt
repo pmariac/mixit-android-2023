@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.mixitconf.databinding.FragmentLoginBinding
 import org.mixitconf.hideKeyboard

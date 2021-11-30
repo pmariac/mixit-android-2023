@@ -26,7 +26,7 @@ data class SpeakerApiDto(
         firstname ?: "",
         lastname ?: "",
         company,
-        description.get(Language.FRENCH),
-        description.get(Language.ENGLISH)
+        description[Language.FRENCH],
+        description[Language.ENGLISH]
     )
 }

@@ -13,7 +13,7 @@ import org.mixitconf.service.AppPreferences
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
-    protected val viewModel: FavoritesViewModel by sharedViewModel()
+    private val viewModel: FavoritesViewModel by sharedViewModel()
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)

@@ -33,7 +33,7 @@ enum class Room(val i18nId: Int,
 
     companion object {
         fun of(string: String?): Room =
-            values().firstOrNull { it.name == string } ?: Room.UNKNOWN
+            values().firstOrNull { it.name == string } ?: UNKNOWN
     }
 }
 

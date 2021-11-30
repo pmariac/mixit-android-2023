@@ -6,7 +6,6 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.github.rjeschke.txtmark.Processor
 import org.mixitconf.*
-import org.mixitconf.model.Speaker
 import org.mixitconf.model.enums.Language
 import org.mixitconf.model.enums.Room
 import org.mixitconf.model.enums.TalkFormat

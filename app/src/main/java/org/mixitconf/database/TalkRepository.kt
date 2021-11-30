@@ -1,7 +1,7 @@
-package org.mixitconf.model.dao
+package org.mixitconf.database
 
 import androidx.room.*
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Talk
 
 @Dao
 interface TalkRepository {

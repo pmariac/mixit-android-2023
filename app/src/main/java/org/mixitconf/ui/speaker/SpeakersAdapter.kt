@@ -3,14 +3,13 @@ package org.mixitconf.ui.speaker
 import android.view.View
 import org.mixitconf.R
 import org.mixitconf.databinding.ItemListSpeakerBinding
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.enums.TalkFormat.*
+import org.mixitconf.model.Speaker
 import org.mixitconf.setSpeakerImage
 import org.mixitconf.ui.SimpleItemViewHolder
 import org.mixitconf.ui.SimpleListAdapter
 
 /**
- * Adapter used to display [Article]s.
+ * Adapter used to display [Speaker]s.
  */
 class SpeakersAdapter : SimpleListAdapter<Speaker, SpeakersAdapter.SpeakerViewHolder>() {
 
@@ -21,11 +20,11 @@ class SpeakersAdapter : SimpleListAdapter<Speaker, SpeakersAdapter.SpeakerViewHo
     inner class SpeakerViewHolder(override val containerView: View) : SimpleItemViewHolder<Speaker>(containerView) {
         var viewBinding: ItemListSpeakerBinding = ItemListSpeakerBinding.bind(containerView)
 
-        override fun bindItem(speaker: Speaker) {
+        override fun bindItem(item: Speaker) {
             viewBinding.apply {
-                speakerName.text = speaker.fullname
-                speakerBio.text = speaker.descriptionFr
-                speakerImage.setSpeakerImage(speaker)
+                speakerName.text = item.fullname
+                speakerBio.text = item.descriptionFr
+                speakerImage.setSpeakerImage(item)
             }
         }
 

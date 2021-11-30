@@ -1,4 +1,4 @@
-package org.mixitconf.service.synchronization.dto
+package org.mixitconf.api.dto
 
 import com.squareup.moshi.Json
 import org.mixitconf.model.Link

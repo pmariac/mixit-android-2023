@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentSpeakersBinding
-import org.mixitconf.model.entity.Speaker
+import org.mixitconf.model.Speaker
 import org.mixitconf.ui.BaseFragment
 
 class SpeakersFragment : BaseFragment<FragmentSpeakersBinding>() {

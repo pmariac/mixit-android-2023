@@ -3,10 +3,10 @@ package org.mixitconf.ui.speaker
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import org.mixitconf.model.dao.SpeakerRepository
-import org.mixitconf.model.dao.TalkRepository
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.database.SpeakerRepository
+import org.mixitconf.database.TalkRepository
+import org.mixitconf.model.Speaker
+import org.mixitconf.model.Talk
 
 class SpeakersViewModel(
     private val repository: SpeakerRepository,

@@ -1,7 +1,7 @@
-package org.mixitconf.model.dao
+package org.mixitconf.database
 
 import androidx.room.*
-import org.mixitconf.model.entity.Speaker
+import org.mixitconf.model.Speaker
 
 @Dao
 interface SpeakerRepository {

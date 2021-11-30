@@ -1,4 +1,4 @@
-package org.mixitconf.model.dao
+package org.mixitconf.database
 
 import androidx.room.*
 import org.mixitconf.model.Link

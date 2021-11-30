@@ -1,7 +1,7 @@
 package org.mixitconf.api.dto
 
 import com.squareup.moshi.Json
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Talk
 import org.mixitconf.model.enums.Language
 import org.mixitconf.model.enums.Room
 import org.mixitconf.model.enums.TalkFormat

@@ -3,8 +3,8 @@ package org.mixitconf.ui.settings
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import org.mixitconf.model.dao.TalkRepository
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.database.TalkRepository
+import org.mixitconf.model.Talk
 import org.mixitconf.service.planning.PlanningAlarmService
 
 class FavoritesViewModel(

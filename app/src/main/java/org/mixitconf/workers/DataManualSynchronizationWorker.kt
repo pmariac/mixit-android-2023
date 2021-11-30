@@ -5,8 +5,8 @@ import androidx.work.*
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.mixitconf.R
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Speaker
+import org.mixitconf.model.Talk
 import org.mixitconf.service.notification.NotificationChannelManager
 import org.mixitconf.service.notification.NotificationChannelManager.NotificationOption
 import org.mixitconf.service.synchronization.SpeakerSynchronizationService

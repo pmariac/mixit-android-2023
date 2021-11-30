@@ -1,4 +1,4 @@
-package org.mixitconf.model.entity
+package org.mixitconf.model
 
 import android.net.Uri
 import androidx.room.Entity
@@ -6,7 +6,6 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.github.rjeschke.txtmark.Processor
 import org.mixitconf.R
-import org.mixitconf.model.Link
 import org.mixitconf.model.enums.LinkType
 import org.mixitconf.toHtml
 
@@ -42,7 +41,7 @@ data class Speaker(
     val hasLink: Boolean
         get() = socialLink != null || webLink != null
 
-    val linkUri
+    val linkUri: Uri
         get() = Uri.parse(socialLink?.url ?: webLink?.url ?: "https://mixitconf.org/user/${login}")
 
     val linkImageResourceId: Int

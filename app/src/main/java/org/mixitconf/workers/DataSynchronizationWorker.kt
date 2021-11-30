@@ -7,8 +7,8 @@ import org.koin.core.component.inject
 import org.mixitconf.Properties.DATA_SYNC_INTERVAL
 import org.mixitconf.Properties.DATA_SYNC_INTERVAL_TIMEUNIT
 import org.mixitconf.Properties.DATA_SYNC_WORKER_NAME
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Speaker
+import org.mixitconf.model.Talk
 import org.mixitconf.service.synchronization.SpeakerSynchronizationService
 import org.mixitconf.service.synchronization.SynchronizationService.Companion.SyncMode.BACKGROUND
 import org.mixitconf.service.synchronization.TalkSynchronizationService

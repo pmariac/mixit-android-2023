@@ -1,7 +1,7 @@
 package org.mixitconf.api
 
 import org.mixitconf.api.dto.TalkApiDto
-import org.mixitconf.service.synchronization.dto.SpeakerApiDto
+import org.mixitconf.api.dto.SpeakerApiDto
 import retrofit2.Response
 import retrofit2.http.GET
 

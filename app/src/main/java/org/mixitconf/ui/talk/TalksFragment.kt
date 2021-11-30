@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy.
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentTalksBinding
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Talk
 import org.mixitconf.ui.BaseFragment
 
 open class TalksFragment : BaseFragment<FragmentTalksBinding>() {

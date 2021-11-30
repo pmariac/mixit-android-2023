@@ -3,8 +3,8 @@ package org.mixitconf.service.synchronization
 import androidx.room.Transaction
 import org.mixitconf.api.TalkApiRepository
 import org.mixitconf.api.dto.TalkApiDto
-import org.mixitconf.model.dao.TalkRepository
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.database.TalkRepository
+import org.mixitconf.model.Talk
 import org.mixitconf.service.planning.PlanningAlarmService
 import org.mixitconf.service.planning.PlanningGenerator
 import retrofit2.Response

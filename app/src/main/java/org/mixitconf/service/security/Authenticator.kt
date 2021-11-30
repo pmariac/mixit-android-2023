@@ -18,7 +18,7 @@ class AuthenticatorService : Service() {
     override fun onBind(intent: Intent?): IBinder? = Authenticator(this).iBinder
 }
 
-class Authenticator(private val context: Context) :
+class Authenticator(context: Context) :
     AbstractAccountAuthenticator(context), KoinComponent {
 
     private val authService: UserApiRepository by inject()

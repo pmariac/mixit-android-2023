@@ -45,7 +45,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         viewBinding.progressBar.show(false)
         viewBinding.textErrorEmail.show(false)
         viewBinding.textErrorToken.show(false)
-        viewModel.loginFormState.observe(viewLifecycleOwner, Observer { loginState ->
+        viewModel.loginFormState.observe(viewLifecycleOwner, { loginState ->
             viewBinding.textErrorEmail.show(loginState?.emailError != null)
             viewBinding.textErrorToken.show(loginState?.tokenError != null)
         })
@@ -58,7 +58,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         val email = viewBinding.editTextEmail.text?.toString()?.trim() ?: ""
         val password = viewBinding.editTextToken.text?.toString()?.trim() ?: ""
 
-        viewModel.login(email, password)?.observe(viewLifecycleOwner, Observer { result ->
+        viewModel.login(email, password)?.observe(viewLifecycleOwner, { result ->
             // Show/hide loading:
             viewBinding.progressBar.show(result is Resource.Loading)
             val handler = ResourceHandler<LoginResponse>(requireContext(), viewBinding.progressBar) {

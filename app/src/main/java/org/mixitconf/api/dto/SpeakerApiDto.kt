@@ -1,7 +1,7 @@
-package org.mixitconf.service.synchronization.dto
+package org.mixitconf.api.dto
 
 import com.squareup.moshi.Json
-import org.mixitconf.model.entity.Speaker
+import org.mixitconf.model.Speaker
 import org.mixitconf.model.enums.Language
 
 

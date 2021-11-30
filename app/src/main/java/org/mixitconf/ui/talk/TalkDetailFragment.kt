@@ -12,10 +12,9 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.R
 import org.mixitconf.databinding.FragmentTalkDetailBinding
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Speaker
+import org.mixitconf.model.Talk
 import org.mixitconf.model.enums.Language
-import org.mixitconf.model.enums.Room
 import org.mixitconf.ui.BaseFragment
 import org.mixitconf.ui.speaker.SpeakersAdapter
 
@@ -56,7 +55,7 @@ class TalkDetailFragment : BaseFragment<FragmentTalkDetailBinding>() {
         viewBinding.btnFavorite.setOnClickListener(null)
     }
 
-    private fun initTalk(talk: Talk?): Unit {
+    private fun initTalk(talk: Talk?) {
         if (talk != null) {
             viewBinding.apply {
                 fragmentTalkDetailHeader.apply {

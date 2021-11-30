@@ -7,11 +7,8 @@ import org.mixitconf.database.adapter.DateConverter
 import org.mixitconf.database.adapter.EnumConverters
 import org.mixitconf.model.Link
 import org.mixitconf.model.User
-import org.mixitconf.model.dao.LinkRepository
-import org.mixitconf.model.dao.SpeakerRepository
-import org.mixitconf.model.dao.TalkRepository
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Speaker
+import org.mixitconf.model.Talk
 
 
 @Database(entities = [User::class, Link::class, Talk::class, Speaker::class], version = 1)

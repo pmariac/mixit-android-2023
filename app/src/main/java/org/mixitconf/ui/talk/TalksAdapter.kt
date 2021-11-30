@@ -3,7 +3,7 @@ package org.mixitconf.ui.talk
 import android.view.View
 import org.mixitconf.R
 import org.mixitconf.databinding.ItemListTalkBinding
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Talk
 import org.mixitconf.model.enums.Language
 import org.mixitconf.model.enums.TalkFormat.*
 import org.mixitconf.ui.SimpleItemViewHolder

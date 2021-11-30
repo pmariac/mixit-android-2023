@@ -19,10 +19,10 @@ class AboutFragment : BaseFragment<FragmentAboutBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initBuildBumber()
+        initBuildNumber()
     }
 
-    private fun initBuildBumber() {
+    private fun initBuildNumber() {
         val currentVersion = BuildConfig.VERSION_NAME
         viewBinding.tvVersion.text = String.format(getString(R.string.settings_about_version), currentVersion)
     }

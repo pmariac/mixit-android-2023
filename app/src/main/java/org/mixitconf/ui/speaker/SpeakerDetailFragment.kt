@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentSpeakerDetailBinding
-import org.mixitconf.model.entity.Speaker
-import org.mixitconf.model.entity.Talk
+import org.mixitconf.model.Speaker
+import org.mixitconf.model.Talk
 import org.mixitconf.setSpeakerImage
 import org.mixitconf.ui.BaseFragment
 import org.mixitconf.ui.talk.TalksAdapter

@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import org.mixitconf.Properties.SPECIAL_SLUG_CHARACTERS
-import org.mixitconf.model.entity.Speaker
+import org.mixitconf.model.Speaker
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -45,7 +45,7 @@ fun Context.hasPermission(permission: String) =
     checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
 /**
- * Extension fonction to transform a Date in a french time
+ * Extension function to transform a Date in a french time
  */
 val Date.toFrenchTime
     get(): Date {
@@ -56,7 +56,7 @@ val Date.toFrenchTime
     }
 
 fun Date.toString(pattern: String): String =
-    SimpleDateFormat(pattern).format(this)
+    SimpleDateFormat(pattern, Locale.FRANCE).format(this)
 
 /**
  * Format date in user locale
@@ -107,7 +107,7 @@ fun ImageView.setSpeakerImage(speaker: Speaker) {
     )
     val size = this.resources.getDimension(R.dimen.image_list_size).toInt()
     Picasso.get()
-        .load(R.drawable.mxt_icon_unknown)
+        .load(if (imageResource > 0) imageResource else R.drawable.mxt_icon_unknown)
         .placeholder(R.drawable.mxt_icon_unknown)
         .resize(size, size)
         .into(this)

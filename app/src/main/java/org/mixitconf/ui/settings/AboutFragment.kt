@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import org.mixitconf.BuildConfig
 import org.mixitconf.R
-import org.mixitconf.ui.BaseFragment
 import org.mixitconf.databinding.FragmentAboutBinding
+import org.mixitconf.ui.BaseFragment
 
 class AboutFragment : BaseFragment<FragmentAboutBinding>() {
 

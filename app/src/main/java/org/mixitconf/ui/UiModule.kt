@@ -3,6 +3,7 @@ package org.mixitconf.ui
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import org.mixitconf.ui.login.LoginViewModel
+import org.mixitconf.ui.settings.FavoritesViewModel
 import org.mixitconf.ui.speaker.SpeakersViewModel
 import org.mixitconf.ui.talk.TalksViewModel
 
@@ -22,7 +23,7 @@ val uiModule = module {
      * Declare a single instance of [TalksViewModel].
      */
     viewModel {
-        TalksViewModel(get(), get())
+        TalksViewModel(get(), get(), get())
     }
 
     /**
@@ -30,6 +31,13 @@ val uiModule = module {
      */
     viewModel {
         SpeakersViewModel(get(), get())
+    }
+
+    /**
+     * Declare a single instance of [FavoritesViewModel].
+     */
+    viewModel {
+        FavoritesViewModel(get(), get())
     }
 }
 

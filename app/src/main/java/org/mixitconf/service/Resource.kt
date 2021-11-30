@@ -2,7 +2,6 @@ package org.mixitconf.service
 
 import org.mixitconf.HttpStatus
 import retrofit2.Response
-import java.lang.IllegalArgumentException
 
 class UnknownUserException : Exception()
 class InvalidCredentialException : Exception()

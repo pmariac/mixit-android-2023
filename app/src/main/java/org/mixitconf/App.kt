@@ -5,8 +5,9 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
-import org.mixitconf.database.databaseModule
 import org.mixitconf.api.apiModule
+import org.mixitconf.database.databaseModule
+import org.mixitconf.service.notification.NotificationChannelManager
 import org.mixitconf.service.serviceModule
 import org.mixitconf.ui.uiModule
 import timber.log.Timber
@@ -33,7 +34,13 @@ class App : Application() {
         super.onCreate()
         injectDependencies()
         initTimber()
+        createNotificationChannels()
         instance = this
+    }
+
+    private fun createNotificationChannels() {
+        NotificationChannelManager.createPlanningNotificationChannel(this)
+        NotificationChannelManager.createSyncNotificationChannel(this)
     }
 
     private fun injectDependencies() {

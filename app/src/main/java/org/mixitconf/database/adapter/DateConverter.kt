@@ -1,7 +1,7 @@
 package org.mixitconf.database.adapter
 
 import androidx.room.TypeConverter
-import java.util.Date
+import java.util.*
 
 class DateConverter {
 

@@ -5,15 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentTalksBinding
 import org.mixitconf.model.entity.Talk
-import org.mixitconf.model.enums.TalkFormat
 import org.mixitconf.ui.BaseFragment
 
 open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
@@ -53,7 +50,7 @@ open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
 
     private fun openTalk(talk: Talk) {
         if (talk.format.isTalk) {
-            val directions = MainNavigationGraphDirections.actionTalksFragmentToTalkDetailFragment(talk.id)
+            val directions = MainNavigationGraphDirections.actionTalksFragmentToTalkDetailFragment(talk.id!!)
             findNavController().navigate(directions)
         }
     }

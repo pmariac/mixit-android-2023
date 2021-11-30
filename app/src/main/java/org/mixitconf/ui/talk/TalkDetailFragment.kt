@@ -16,7 +16,6 @@ import org.mixitconf.model.entity.Speaker
 import org.mixitconf.model.entity.Talk
 import org.mixitconf.model.enums.Language
 import org.mixitconf.model.enums.Room
-import org.mixitconf.model.enums.Topic
 import org.mixitconf.ui.BaseFragment
 import org.mixitconf.ui.speaker.SpeakersAdapter
 
@@ -24,7 +23,7 @@ class TalkDetailFragment : BaseFragment<FragmentTalkDetailBinding>() {
 
     private val args by navArgs<TalkDetailFragmentArgs>()
 
-    private val talkId: String by lazy { args.talkId }
+    private val talkId: Long by lazy { args.talkId }
 
     private val viewModel: TalksViewModel by sharedViewModel()
 

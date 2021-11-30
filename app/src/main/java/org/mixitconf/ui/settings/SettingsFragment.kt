@@ -6,10 +6,14 @@ import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreferenceCompat
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.R
 import org.mixitconf.service.AppPreferences
 
 class SettingsFragment : PreferenceFragmentCompat() {
+
+    protected val viewModel: FavoritesViewModel by sharedViewModel()
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
@@ -22,6 +26,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
         when (preference?.key) {
             KEY_ABOUT -> launchAboutFragment()
             KEY_ABOUT_MIXIT -> launchMixitAboutPage()
+            AppPreferences.KEY_FAVORITE_NOTIFICATION -> {
+                viewModel
+                    .updateFavoriteAlarms((preference as SwitchPreferenceCompat).isChecked)
+                    .observe(viewLifecycleOwner, {})
+                return super.onPreferenceTreeClick(preference)
+            }
             else -> return super.onPreferenceTreeClick(preference)
         }
         return true
@@ -29,7 +39,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private fun launchMixitAboutPage() {
         startActivity(
-            Intent(Intent.ACTION_VIEW, Uri.parse("https://mixitconf.org/schedule")
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://mixitconf.org/schedule")
             ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
     }

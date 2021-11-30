@@ -14,34 +14,24 @@ abstract class SynchronizationService<Dto> : KoinComponent {
 
     companion object {
         enum class SyncMode { MANUAL, BACKGROUND }
-        enum class Result { Success, Error }
+        enum class Result(val result: Boolean) { Success(true), Error(false), Nothing(true)}
     }
 
     @Transaction
-    inline suspend fun <reified Entity> synchronize(mode: SyncMode) {
+    suspend inline fun <reified Entity> synchronize(mode: SyncMode): Result {
         // We need to check user preference to know if he wants to do this job in background
         if (mode == SyncMode.BACKGROUND && !AppPreferences.maySyncDataInBackground) {
             Timber.d("User choose to disable background data sync")
-            return
+            return Result.Nothing
         }
-        runCatching { read() }
-            .onFailure {
-                it.printStackTrace()
-                Timber.e(it)
-                sendNotification<Entity>(Result.Error)
-            }
-            .onSuccess { save(it.body() ?: emptyList(), mode) }
+        return try {
+            save(read().body() ?: emptyList(), mode).let { Result.Success }
+        } catch (e: Exception) {
+            Result.Error
+        }
     }
 
     abstract suspend fun read(): Response<List<Dto>>
 
     abstract suspend fun save(result: List<Dto>, mode: SyncMode)
-
-    inline fun <reified Entity> sendNotification(result: Result) {
-        if (result == Result.Success) {
-            Timber.i("{Entity::class.java} date are synchronised")
-        } else {
-            Timber.e("Impossible to synchronize ${Entity::class.java}")
-        }
-    }
 }

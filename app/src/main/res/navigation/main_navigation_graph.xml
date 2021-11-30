@@ -46,7 +46,7 @@
     <action
         android:id="@+id/action_talksFragment_to_talkDetailFragment"
         app:destination="@id/navigation_talk_detail" >
-        <argument android:name="talkId" app:argType="string"/>
+        <argument android:name="talkId" app:argType="long"/>
     </action>
 
     <fragment
@@ -55,7 +55,7 @@
         android:label="@string/title_fragment_talks">
         <argument
             android:name="talkId"
-            app:argType="string" />
+            app:argType="long" />
     </fragment>
 
     <action

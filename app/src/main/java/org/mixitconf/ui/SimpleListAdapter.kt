@@ -4,9 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 
 /**
  * Simple [RecyclerView.Adapter] with some util methods to

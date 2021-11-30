@@ -1,7 +1,6 @@
 package org.mixitconf.model.dao
 
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 import org.mixitconf.model.entity.Talk
 
 @Dao
@@ -12,11 +11,14 @@ interface TalkRepository {
     @Query("select * from Talk")
     suspend fun readAll(): List<Talk>
 
+    @Query("select * from Talk where favorite = 1")
+    suspend fun readFavorites(): List<Talk>
+
     @Query("select * from Talk where speakerIds like '%' || :id || '%'")
     suspend fun readAllBySpeakerId(id: String): List<Talk>
 
     @Query("select * from Talk where id=:id")
-    suspend fun readOne(id: String): Talk?
+    suspend fun readOne(id: Long): Talk?
 
     @Update
     suspend fun update(talk: Talk)
@@ -28,5 +30,5 @@ interface TalkRepository {
     suspend fun deleteAll()
 
     @Query("delete from Talk where id in (:ids)")
-    suspend fun deleteAllById(ids: List<String>)
+    suspend fun deleteAllById(ids: List<Long>)
 }

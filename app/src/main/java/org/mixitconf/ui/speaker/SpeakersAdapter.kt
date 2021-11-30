@@ -1,13 +1,11 @@
 package org.mixitconf.ui.speaker
 
 import android.view.View
-import com.squareup.picasso.Picasso
 import org.mixitconf.R
 import org.mixitconf.databinding.ItemListSpeakerBinding
 import org.mixitconf.model.entity.Speaker
 import org.mixitconf.model.enums.TalkFormat.*
 import org.mixitconf.setSpeakerImage
-import org.mixitconf.toSlug
 import org.mixitconf.ui.SimpleItemViewHolder
 import org.mixitconf.ui.SimpleListAdapter
 

@@ -72,6 +72,7 @@
     <string name="error_forbidden">This action is forbidden.</string>
     <string name="error_invalid_credential">Token is invalid.</string>
     <string name="error_unknown_email">No account is associated to this email address. Use MiXiT conf website to create your account</string>
+    <string name="error_sync_data">Data are not synchronized. Try again later. If problem persists please contact us to contact@mix-it.fr</string>
 
     <string name="info_sent_token">A token was send by email. Please check your mailbox and retry a connection with its token</string>
     <string name="info_sync_data">Data are synchronized</string>
@@ -112,4 +113,18 @@
 
     <!-- Favorite screen -->
     <string name="favorite_empty">You have no favorite conference. To mark a conference as favorite use the heart button on detail talk screen.</string>
+
+    <!-- Notiffication channels -->
+    <string name="planning_notification_channel_id">planning_notification_channel</string>
+    <string name="planning_notification_channel_name">channame</string>
+    <string name="planning_notification_channel_description">chandes</string>
+    <string name="sync_notification_channel_id">syncchanid</string>
+    <string name="sync_notification_channel_name">syncchan name</string>
+    <string name="sync_notification_channel_description">sync desc</string>
+
+    <string name="new_ticket_comment_notification_channel_id" translatable="false">new_ticket_comment_notification_channel</string>
+    <string name="new_ticket_comment_notification_channel_name">Support tickets</string>
+    <string name="new_ticket_comment_notification_channel_description">Push notifications for ticket updates</string>
+    <string name="fairphone_notification_channel_id" translatable="false">fairphone_notifications</string>
+    <string name="fairphone_notification_channel_name" translatable="false">Fairphone</string>
 </resources>

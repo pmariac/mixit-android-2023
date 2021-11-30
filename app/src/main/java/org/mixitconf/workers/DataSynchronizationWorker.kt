@@ -7,6 +7,7 @@ import org.koin.core.component.inject
 import org.mixitconf.Properties.DATA_SYNC_INTERVAL
 import org.mixitconf.Properties.DATA_SYNC_INTERVAL_TIMEUNIT
 import org.mixitconf.Properties.DATA_SYNC_WORKER_NAME
+import org.mixitconf.model.entity.Speaker
 import org.mixitconf.model.entity.Talk
 import org.mixitconf.service.synchronization.SpeakerSynchronizationService
 import org.mixitconf.service.synchronization.SynchronizationService.Companion.SyncMode.BACKGROUND
@@ -45,10 +46,12 @@ class DataSynchronizationWorker(
 
     override suspend fun doWork(): Result {
         return try {
-            talkSynchronizationService.synchronize<Talk>(BACKGROUND)
-            speakerSynchronizationService.synchronize<Talk>(BACKGROUND)
-            Result.success()
-        } catch (e: Exception) {
+            (speakerSynchronizationService.synchronize<Speaker>(BACKGROUND).result &&
+                    talkSynchronizationService.synchronize<Talk>(BACKGROUND).result).let {
+                        if(it) Result.success() else Result.failure()
+            }
+        }
+        catch (e: Exception) {
             Timber.w(e, "Error trying to synchronize data: ${e.message}")
             Result.failure()
         }

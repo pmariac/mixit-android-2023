@@ -14,7 +14,7 @@ import java.util.*
 
 @Entity
 data class Talk(
-    @PrimaryKey val id: String,
+    val remoteId: String,
     val format: TalkFormat,
     val event: String,
     val title: String,
@@ -26,7 +26,8 @@ data class Talk(
     val room: Room,
     val start: Date,
     val end: Date,
-    val favorite: Boolean = false
+    val favorite: Boolean = false,
+    @PrimaryKey(autoGenerate = true) val id: Long? = null
 ) {
 
     // This list is only populated when we want to see the talk detail. For that we read speakers by their ids

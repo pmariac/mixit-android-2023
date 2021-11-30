@@ -11,7 +11,6 @@ import org.mixitconf.service.InvalidCredentialException
 import org.mixitconf.service.Resource
 import org.mixitconf.service.UnknownUserException
 import org.mixitconf.service.asError
-import java.lang.RuntimeException
 
 data class LoginResponse(
     val user: User? = null,

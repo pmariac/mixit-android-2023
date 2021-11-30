@@ -1,7 +1,6 @@
 package org.mixitconf.model.enums
 
 import org.mixitconf.R
-import org.mixitconf.model.enums.TalkFormat.*
 
 enum class TalkFormat(val duration: Int, val label: Int) {
     CLOSING_SESSION(25, R.string.talk_format_closing_session),

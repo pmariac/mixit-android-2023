@@ -10,12 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
-import org.mixitconf.R
 import org.mixitconf.databinding.FragmentSpeakerDetailBinding
 import org.mixitconf.model.entity.Speaker
 import org.mixitconf.model.entity.Talk
-import org.mixitconf.model.enums.Language
-import org.mixitconf.model.enums.Room
 import org.mixitconf.setSpeakerImage
 import org.mixitconf.ui.BaseFragment
 import org.mixitconf.ui.talk.TalksAdapter
@@ -75,7 +72,7 @@ class SpeakerDetailFragment : BaseFragment<FragmentSpeakerDetailBinding>() {
     }
 
     private fun openTalk(talk: Talk) {
-        val directions = MainNavigationGraphDirections.actionTalksFragmentToTalkDetailFragment(talk.id)
+        val directions = MainNavigationGraphDirections.actionTalksFragmentToTalkDetailFragment(talk.id!!)
         findNavController().navigate(directions)
     }
 }

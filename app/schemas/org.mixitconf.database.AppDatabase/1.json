@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "c02cb905a94ecd68295989c34ab61087",
+    "identityHash": "6140d86a3e0644caa00d2a51f6424d0d",
     "entities": [
       {
         "tableName": "User",
@@ -94,11 +94,11 @@
       },
       {
         "tableName": "Talk",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `format` TEXT NOT NULL, `event` TEXT NOT NULL, `title` TEXT NOT NULL, `summary` TEXT NOT NULL, `speakerIds` TEXT NOT NULL, `language` TEXT NOT NULL, `description` TEXT, `topic` TEXT NOT NULL, `room` TEXT NOT NULL, `start` INTEGER NOT NULL, `end` INTEGER NOT NULL, `favorite` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`remoteId` TEXT NOT NULL, `format` TEXT NOT NULL, `event` TEXT NOT NULL, `title` TEXT NOT NULL, `summary` TEXT NOT NULL, `speakerIds` TEXT NOT NULL, `language` TEXT NOT NULL, `description` TEXT, `topic` TEXT NOT NULL, `room` TEXT NOT NULL, `start` INTEGER NOT NULL, `end` INTEGER NOT NULL, `favorite` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
+            "fieldPath": "remoteId",
+            "columnName": "remoteId",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -173,13 +173,19 @@
             "columnName": "favorite",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
           "columnNames": [
             "id"
           ],
-          "autoGenerate": false
+          "autoGenerate": true
         },
         "indices": [],
         "foreignKeys": []
@@ -238,7 +244,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c02cb905a94ecd68295989c34ab61087')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6140d86a3e0644caa00d2a51f6424d0d')"
     ]
   }
 }

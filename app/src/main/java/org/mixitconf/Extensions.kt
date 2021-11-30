@@ -7,7 +7,6 @@ import android.text.Html.fromHtml
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import com.squareup.picasso.Picasso
 import org.mixitconf.Properties.SPECIAL_SLUG_CHARACTERS
 import org.mixitconf.model.entity.Speaker

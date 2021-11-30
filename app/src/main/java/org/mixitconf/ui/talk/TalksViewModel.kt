@@ -9,11 +9,13 @@ import org.mixitconf.model.dao.TalkRepository
 import org.mixitconf.model.entity.Speaker
 import org.mixitconf.model.entity.Talk
 import org.mixitconf.model.enums.TalkFormat
+import org.mixitconf.service.planning.PlanningAlarmService
 import org.mixitconf.toString
 
 class TalksViewModel(
     private val repository: TalkRepository,
-    private val speakerRepository: SpeakerRepository
+    private val speakerRepository: SpeakerRepository,
+    private val alarmService: PlanningAlarmService
 ) : ViewModel() {
 
     fun search(): LiveData<List<Talk>> = liveData {
@@ -31,7 +33,7 @@ class TalksViewModel(
         emit(favorites.plus(days).sortedWith(compareBy<Talk> { it.start }.thenBy { it.end }.thenBy { it.room }))
     }
 
-    fun getOne(id: String): LiveData<Talk?> = liveData {
+    fun getOne(id: Long): LiveData<Talk?> = liveData {
         emit(repository.readOne(id))
     }
 
@@ -40,7 +42,13 @@ class TalksViewModel(
     }
 
     fun update(talk: Talk): LiveData<Talk?> = liveData {
+        if (talk.favorite) {
+            alarmService.setTalkAlarm(talk)
+        }
+        else {
+            alarmService.cancelTalkAlarm(talk)
+        }
         repository.update(talk)
-        emit(repository.readOne(talk.id))
+        emit(repository.readOne(talk.id!!))
     }
 }

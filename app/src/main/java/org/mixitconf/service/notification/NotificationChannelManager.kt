@@ -73,7 +73,7 @@ object NotificationChannelManager {
             TaskStackBuilder.create(context).run {
                 addParentStack(MainActivity::class.java)
                 addNextIntent(it)
-                getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
+                getPendingIntent(0, PendingIntent.FLAG_IMMUTABLE)
             }
         }
         val channelId = context.getString(channelIdResId)

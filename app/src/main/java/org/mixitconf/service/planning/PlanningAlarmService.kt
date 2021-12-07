@@ -10,6 +10,8 @@ import org.mixitconf.Properties
 import org.mixitconf.model.Talk
 import org.mixitconf.receivers.PlanningAlarmReceiver
 import org.mixitconf.service.AppPreferences
+import java.time.Duration
+import java.time.Instant
 
 
 class PlanningAlarmService(private val context: Context) {
@@ -18,13 +20,15 @@ class PlanningAlarmService(private val context: Context) {
         context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
     fun setTalkAlarm(talk: Talk) {
-        // We have to check user preference to know if we have to create an alarm or not
         if (AppPreferences.mayNotifyBeforeTalkStart) {
-            // Alarm is setted to be executed 15 minutes
-            // TODO set talk start time
-            getAlarmManager()
-                .set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 6000, getPendingIntent(talk))
+            // Alarm is setted to be executed 5 minutes before its start
+            val durationInMillis = Duration.between(Instant.now(), talk.startTime.toInstant()).minusMinutes(5).toMillis()
+            if (durationInMillis > 0) {
+                getAlarmManager()
+                    .set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + durationInMillis, getPendingIntent(talk))
+            }
         }
+        // We have to check user preference to know if we have to create an alarm or not
     }
 
     private fun getPendingIntent(talk: Talk) =

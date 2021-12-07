@@ -11,6 +11,7 @@ import org.mixitconf.R
 import org.mixitconf.database.TalkRepository
 import org.mixitconf.service.notification.NotificationChannelManager
 import org.mixitconf.service.notification.NotificationChannelManager.NotificationOption
+import org.mixitconf.ui.home.MainActivity
 
 class PlanningAlarmReceiver : BroadcastReceiver(), KoinComponent {
 
@@ -25,8 +26,9 @@ class PlanningAlarmReceiver : BroadcastReceiver(), KoinComponent {
                 NotificationChannelManager.createPlanningNotification(
                     context,
                     NotificationOption(
-                        talk.title,
-                        context.getString(R.string.planning_notification_description, talk.roomName(context.resources))
+                        title = talk.title,
+                        message = context.getString(R.string.planning_notification_description, talk.roomName(context.resources)),
+                        intent = MainActivity.getIntent(context, talkId)
                     )
                 )
             }

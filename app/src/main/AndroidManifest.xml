@@ -20,23 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
-
-
-        <service
-            android:name=".service.security.AuthenticatorService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator" />
-        </service>
-
         <receiver
             android:name=".receivers.BootUpReceiver"
             android:exported="true">
@@ -47,9 +30,6 @@
         <receiver
             android:name=".receivers.PlanningAlarmReceiver"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--            </intent-filter>-->
         </receiver>
     </application>
 

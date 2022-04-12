@@ -6,7 +6,7 @@
     <color name="colorAccent">#FF8D4E</color>
     <color name="colorSecondary">#aecbd6</color>
     <color name="colorSecondaryDark">#7e9aa5</color>
-    <color name="colorShadow">#F5F5F5</color>
+    <color name="colorShadow">#e1e8eb</color>
     <color name="textPrimary">#2C233D</color>
     <color name="textShadow">#888888</color>
     <color name="unknown">#cccccc</color>

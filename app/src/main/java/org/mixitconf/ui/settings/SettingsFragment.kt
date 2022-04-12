@@ -22,14 +22,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
     /**
      * When user click on "about" line we want to open a fragment with about page
      */
-    override fun onPreferenceTreeClick(preference: Preference?): Boolean {
-        when (preference?.key) {
+    override fun onPreferenceTreeClick(preference: Preference): Boolean {
+        when (preference.key) {
             KEY_ABOUT -> launchAboutFragment()
             KEY_ABOUT_MIXIT -> launchMixitAboutPage()
             AppPreferences.KEY_FAVORITE_NOTIFICATION -> {
                 viewModel
                     .updateFavoriteAlarms((preference as SwitchPreferenceCompat).isChecked)
-                    .observe(viewLifecycleOwner, {})
+                    .observe(viewLifecycleOwner) {}
                 return super.onPreferenceTreeClick(preference)
             }
             else -> return super.onPreferenceTreeClick(preference)

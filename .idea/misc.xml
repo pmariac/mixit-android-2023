@@ -48,7 +48,7 @@
         <entry key="app/src/main/res/layout/fragment_talk_detail_content.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_talk_detail_header.xml" value="0.19907407407407407" />
         <entry key="app/src/main/res/layout/fragment_talks.xml" value="0.10729166666666666" />
-        <entry key="app/src/main/res/layout/item_list_speaker.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_list_speaker.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_list_talk.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_talk.xml" value="0.10729166666666666" />
         <entry key="app/src/main/res/layout/toolbar_bottom.xml" value="0.2391304347826087" />

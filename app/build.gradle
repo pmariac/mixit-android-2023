@@ -5,7 +5,7 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
-ext.versionMajor = 1
+ext.versionMajor = 3
 ext.versionMinor = 0
 ext.versionPatch = 0
 
@@ -14,7 +14,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "org.mixitconf"
+        applicationId "org.mixit.conf"
         minSdkVersion 26
         targetSdkVersion 32
         versionCode versionMajor * 100000 + versionMinor * 100 + versionPatch

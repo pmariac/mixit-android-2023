@@ -74,6 +74,7 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
             viewBinding.apply {
                 tvTalkItemName.setTextColor(context.getColor(nameColor))
                 tvTalkItemTime.setTextColor(context.getColor(timeColor))
+                tvTalkItemDescription.setTextColor(context.getColor(timeColor))
             }
         }
 

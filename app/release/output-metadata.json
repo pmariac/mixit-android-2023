@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "org.mixit.conf",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 300001,
+      "versionName": "3.0.1",
+      "outputFile": "app-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

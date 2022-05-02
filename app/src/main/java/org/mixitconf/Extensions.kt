@@ -58,10 +58,11 @@ val Date.toFrenchTime
 fun Date.toString(pattern: String): String =
     SimpleDateFormat(pattern, Locale.FRANCE).format(this)
 
+
 /**
  * Format date in user locale
  */
-fun Date.formatToString(format: String = "EEE"): String =
+fun Date.formatToString(format: String = "EEE dd"): String =
     SimpleDateFormat(format, Locale.getDefault()).format(this)
 
 /**

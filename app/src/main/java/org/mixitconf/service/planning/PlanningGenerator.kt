@@ -11,6 +11,9 @@ import org.mixitconf.model.enums.Room
 import org.mixitconf.model.enums.TalkFormat
 import org.mixitconf.model.enums.TalkFormat.PLANNING_DAY
 import org.mixitconf.toString
+import java.time.Instant
+import java.time.ZoneId
+import java.time.ZonedDateTime
 import java.util.*
 
 object PlanningGenerator {
@@ -21,7 +24,7 @@ object PlanningGenerator {
     }
 
     fun generatePlanningEvents(context: Context): List<TalkApiDto> = listOf(
-        create(context, Day.One, PLANNING_DAY, 8, 29, R.string.event_day2),
+        create(context, Day.One, PLANNING_DAY, 8, 29, R.string.event_day1),
         create(context, Day.One, TalkFormat.PLANNING_WELCOME, 8, 30),
         create(context, Day.One, TalkFormat.PLANNING_ORGA_SPEECH, 9, 15),
         create(context, Day.One, TalkFormat.PLANNING_INTRODUCTION_SESSION, 10, 0),
@@ -67,9 +70,7 @@ object PlanningGenerator {
     )
 
     private fun createDate(day: Int, hour: Int, minute: Int): Date {
-        val calendar = Calendar.getInstance(Locale.FRANCE)
-        calendar.set(2022, 4, day, hour, minute, 0)
-        calendar.set(Calendar.MILLISECOND, 0)
-        return calendar.time
+        val instant = ZonedDateTime.of(2022, 5, day, hour, minute, 0, 0, ZoneId.of("Europe/Paris"))
+        return Date.from(instant.toInstant())
     }
 }

@@ -23,21 +23,23 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
 
         override fun bindItem(item: Talk) {
             viewBinding.apply {
-                tvTalkItemName.text = item.title
+                tvTalkItemName.text = if(item.format == PLANNING_DAY) item.title.uppercase() else item.title
                 tvTalkItemTime.text = item.getTimeLabel(context.resources)
 
                 when (item.format) {
-                    TALK, WORKSHOP, KEYNOTE, KEYNOTE_SURPRISE, CLOSING_SESSION -> {
+                    TALK, WORKSHOP, KEYNOTE_SURPRISE, CLOSING_SESSION, RANDOM, LIGHTNING_TALK -> {
                         setTalkDetail(item)
                         setColors(item.getBackgroundColor(R.color.white))
                     }
-                    RANDOM, LIGHTNING_TALK -> {
+                    KEYNOTE -> {
                         setTalkDetail(item)
-                        setColors(item.getBackgroundColor(R.color.colorSecondary))
+                        //setColors(item.getBackgroundColor(R.color.colorSecondary))
+                        setColors(R.color.colorPrimary, nameColor = android.R.color.white, descColor = android.R.color.white)
                     }
                     PLANNING_DAY -> {
                         setNonTalkDetail(showTime = false)
-                        setColors(R.color.colorPrimary, nameColor = android.R.color.white)
+                        setColors(item.getBackgroundColor(R.color.colorSecondary))
+                        //setColors(R.color.colorPrimary, nameColor = android.R.color.white)
                     }
                     PLANNING_PARTY -> {
                         setNonTalkDetail()
@@ -69,12 +71,12 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
             }
         }
 
-        private fun setColors(background: Int, nameColor: Int = R.color.black, timeColor: Int = R.color.textShadow) {
+        private fun setColors(background: Int, nameColor: Int = R.color.black, timeColor: Int = R.color.textShadow, descColor: Int = R.color.textShadow) {
             containerView.setBackgroundColor(context.getColor(background))
             viewBinding.apply {
                 tvTalkItemName.setTextColor(context.getColor(nameColor))
                 tvTalkItemTime.setTextColor(context.getColor(timeColor))
-                tvTalkItemDescription.setTextColor(context.getColor(timeColor))
+                tvTalkItemDescription.setTextColor(context.getColor(descColor))
             }
         }
 

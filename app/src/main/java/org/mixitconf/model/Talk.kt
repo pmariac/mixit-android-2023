@@ -42,16 +42,10 @@ data class Talk(
         get() = topic.drawableResourse
 
     val startTime: Date
-        get() = if (format.isTalk) start.toFrenchTime else start
-
-    val startHour
-        get() = start.toFrenchTime.time
+        get() = start.toFrenchTime
 
     val endTime: Date
-        get() = if (format.isTalk) end.toFrenchTime else end
-
-    val endHour
-        get() = end.toFrenchTime.time
+        get() = end.toFrenchTime
 
     val descriptionInMarkdown
         get() = if (description.isNullOrEmpty()) null else Processor.process(description.trim()).toHtml

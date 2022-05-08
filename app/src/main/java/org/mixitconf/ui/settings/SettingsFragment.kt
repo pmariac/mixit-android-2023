@@ -41,7 +41,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         startActivity(
             Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://mixitconf.org/schedule")
+                Uri.parse("https://mixitconf.org/about")
             ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
     }

@@ -15,7 +15,6 @@
         android:id="@+id/speaker_image"
         android:layout_width="@dimen/image_list_size"
         android:layout_height="@dimen/image_list_size"
-        android:layout_marginStart="8dp"
         android:contentDescription="@string/title_fragment_speakers"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"

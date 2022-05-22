@@ -17,7 +17,7 @@
     <string name="language_en">En</string>
     <string name="talk_format_closing_session">Session de fin</string>
     <string name="talk_format_keynote">Keynote</string>
-    <string name="talk_format_random">Talk aléatoire</string>
+    <string name="talk_format_random">Talk</string>
     <string name="talk_format_talk">Talk</string>
     <string name="talk_format_workshop">Workshop</string>
     <string name="talk_format_keynote_surprise">Surprise keynote</string>

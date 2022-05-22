@@ -25,7 +25,7 @@
     <string name="talk_format_closing_session">Closing session</string>
     <string name="talk_format_keynote">Keynote</string>
     <string name="talk_format_keynote_surprise">Surprise keynote</string>
-    <string name="talk_format_random">Random talk</string>
+    <string name="talk_format_random">Talk</string>
     <string name="talk_format_talk">Talk</string>
     <string name="talk_format_workshop">Workshop</string>
     <string name="talk_format_planning_reception">Reception (breakfast)</string>

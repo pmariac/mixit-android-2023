@@ -104,7 +104,7 @@ val String?.toSlug: String
 fun ImageView.setSpeakerImage(speaker: Speaker) {
     // Speaker images are downloaded on the app startup
     val imageResource = context.resources.getIdentifier(
-        speaker.login.toSlug, "drawable", context.applicationInfo.packageName
+        "${speaker.firstname}.${speaker.lastname}".toSlug, "drawable", context.applicationInfo.packageName
     )
     val size = this.resources.getDimension(R.dimen.image_list_size).toInt()
     Picasso.get()

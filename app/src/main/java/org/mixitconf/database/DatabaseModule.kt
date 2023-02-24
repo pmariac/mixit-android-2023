@@ -33,7 +33,7 @@ val databaseModule = module {
      * Declare a single instance of [AppDatabase].
      */
     single {
-        Room.databaseBuilder(androidApplication(), AppDatabase::class.java, "mixit-database")
+        Room.databaseBuilder(androidApplication(), AppDatabase::class.java, "mixit-database-23")
             .build()
     }
 }

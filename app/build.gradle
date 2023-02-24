@@ -1,22 +1,23 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.kapt'
+    //id 'org.jetbrains.kotlin.ksp'
     id 'androidx.navigation.safeargs.kotlin'
+    id("com.google.devtools.ksp") version "1.8.0-1.0.8"
 }
 
 ext.versionMajor = 3
-ext.versionMinor = 0
-ext.versionPatch = 6
+ext.versionMinor = 1
+ext.versionPatch = 0
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "org.mixit.conf"
-        minSdkVersion 26
-        targetSdkVersion 32
+        minSdkVersion 28
+        targetSdkVersion 33
         versionCode versionMajor * 100000 + versionMinor * 100 + versionPatch
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
 
@@ -33,7 +34,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             buildConfigField "String", "MIXIT_URL", "\"https://mixitconf.org/api/\""
-            buildConfigField "String", "EVENT_API", "\"2022/\""
+            buildConfigField "String", "EVENT_API", "\"2023/\""
             buildConfigField "String", "USER_API", "\"external/\""
 
             def devPropertiesFile = rootProject.file('config-dev.properties')
@@ -47,7 +48,7 @@ android {
         debug {
             // buildConfigField "String", "MIXIT_URL", "\"https://mixitconf-staging.cleverapps.io/api/\""
             buildConfigField "String", "MIXIT_URL", "\"https://mixitconf.org/api/\""
-            buildConfigField "String", "EVENT_API", "\"2022/\""
+            buildConfigField "String", "EVENT_API", "\"2023/\""
             buildConfigField "String", "USER_API", "\"external/\""
 
             def prodPropertiesFile = rootProject.file('config-dev.properties')
@@ -66,17 +67,18 @@ android {
         viewBinding true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
+    kotlin {
+        jvmToolchain(8)
     }
-    kapt {
-        arguments {
-            arg("room.schemaLocation", "$projectDir/schemas".toString())
-        }
-    }
+    //kapt {
+    //    arguments {
+    //        arg("room.schemaLocation", "$projectDir/schemas".toString())
+    //    }
+    //}
+    namespace 'org.mixitconf'
 }
 
 dependencies {
@@ -124,7 +126,7 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$timber_version"
 
     // annotationProcessors
-    kapt "androidx.room:room-compiler:$room_version"
+    ksp "androidx.room:room-compiler:$room_version"
 
     // testDependencies
     testImplementation "junit:junit:$junit_version"

@@ -56,7 +56,7 @@ object PlanningGenerator {
     ) = TalkApiDto(
         id = day.name + talkFormat.name + startHour,
         format = talkFormat,
-        event = "2022",
+        event = "2023",
         title = context.getString(title),
         summary = "",
         speakerIds = emptyList(),
@@ -70,7 +70,7 @@ object PlanningGenerator {
     )
 
     private fun createDate(day: Int, hour: Int, minute: Int): Date {
-        val instant = ZonedDateTime.of(2022, 5, day, hour, minute, 0, 0, ZoneId.of("Europe/Paris"))
+        val instant = ZonedDateTime.of(2023, 4, day, hour, minute, 0, 0, ZoneId.of("Europe/Paris"))
         return Date.from(instant.toInstant())
     }
 }

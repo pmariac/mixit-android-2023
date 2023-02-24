@@ -14,10 +14,10 @@
 
     <!-- Event dates -->
     <string name="event_welcome">The conference from Lyon with crêpes and love</string>
-    <string name="event_dates">24th &amp; 25th May 2022</string>
+    <string name="event_dates">13th &amp; 14th April 2023</string>
 
-    <string name="event_day1">Tuesday 24th May</string>
-    <string name="event_day2">Wednesday 25th May</string>
+    <string name="event_day1">Thursday 13th May</string>
+    <string name="event_day2">Friday 14th May</string>
     <string name="event_day3">Thursday 26th May</string>
     <string name="language_en">En</string>
 
@@ -25,6 +25,7 @@
     <string name="talk_format_closing_session">Closing session</string>
     <string name="talk_format_keynote">Keynote</string>
     <string name="talk_format_keynote_surprise">Surprise keynote</string>
+    <string name="talk_format_lightningtak">Lightning talk</string>
     <string name="talk_format_random">Talk</string>
     <string name="talk_format_talk">Talk</string>
     <string name="talk_format_workshop">Workshop</string>

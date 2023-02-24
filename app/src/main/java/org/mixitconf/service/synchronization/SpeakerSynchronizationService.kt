@@ -27,11 +27,15 @@ class SpeakerSynchronizationService(
         speakerRepository.deleteAll()
         linkRepository.deleteAll()
 
+        val persistedLogin = mutableListOf<String>()
         result.map { it }.forEach { speaker ->
-            speakerRepository.create(speaker.toEntity())
-            speaker.links
-                .map { it.toEntity(speaker.login) }
-                .forEach { linkRepository.create(it) }
+            if (!persistedLogin.contains(speaker.login)) {
+                speakerRepository.create(speaker.toEntity())
+                speaker.links
+                    .map { it.toEntity(speaker.login) }
+                    .forEach { linkRepository.create(it) }
+                persistedLogin.add(speaker.login)
+            }
         }
     }
 }

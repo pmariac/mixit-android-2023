@@ -22,7 +22,7 @@ object Properties {
     const val DEFAULT_TIMEOUT_SECONDS = 30L
 
     val SPECIAL_SLUG_CHARACTERS = mapOf(
-        Pair('é', 'e'), Pair('è', 'e'), Pair('ï', 'i'), Pair(' ', '_'), Pair('ê', 'e'),
+        Pair('é', 'e'), Pair('è', 'e'), Pair('ë', 'e'), Pair('ï', 'i'), Pair(' ', '_'), Pair('ê', 'e'), Pair('ç', 'c'),
         Pair('.', '_'), Pair('\'', '_'), Pair('ô', 'o'), Pair('à', 'a'), Pair('-', '_')
     )
 

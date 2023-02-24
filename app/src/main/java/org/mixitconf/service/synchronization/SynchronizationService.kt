@@ -27,6 +27,7 @@ abstract class SynchronizationService<Dto> : KoinComponent {
         return try {
             save(read().body() ?: emptyList(), mode).let { Result.Success }
         } catch (e: Exception) {
+            Timber.e(e)
             Result.Error
         }
     }

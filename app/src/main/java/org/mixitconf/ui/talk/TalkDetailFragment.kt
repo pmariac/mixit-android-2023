@@ -40,14 +40,14 @@ class TalkDetailFragment : BaseFragment<FragmentTalkDetailBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getOne(talkId).observe(viewLifecycleOwner, { talk ->
+        viewModel.getOne(talkId).observe(viewLifecycleOwner) { talk ->
             initTalk(talk)
             if (talk != null) {
-                viewModel.getTalkSpeakers(talk.speakerIdList).observe(viewLifecycleOwner, {
+                viewModel.getTalkSpeakers(talk.speakerIdList).observe(viewLifecycleOwner) {
                     speakersAdapter.setItems(it!!)
-                })
+                }
             }
-        })
+        }
     }
 
     override fun onDestroyView() {

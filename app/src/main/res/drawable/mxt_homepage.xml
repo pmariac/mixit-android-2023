@@ -8,12 +8,6 @@
         android:bottom="10dp"
         android:top="36dp"/>
     <item
-        android:drawable="@drawable/mxt_fireworks"
-        android:left="90dp"
-        android:right="0dp"
-        android:width="50dp"
-        android:height="70dp"/>
-    <item
         android:drawable="@drawable/mxt_text_home"
         android:left="10dp"
         android:right="0dp"

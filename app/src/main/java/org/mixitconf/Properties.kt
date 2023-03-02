@@ -7,9 +7,9 @@ object Properties {
     const val TALK_DATE_FORMAT = "yyyy/MM/dd'T'HH:mm:ss"
     const val MIXIT_EVENT_API = BuildConfig.MIXIT_URL + BuildConfig.EVENT_API
     const val MIXIT_USER_API = BuildConfig.MIXIT_URL + BuildConfig.USER_API
-    const val MIXIT_DAY_1 = 24
-    const val MIXIT_DAY_2 = 25
-    const val MIXIT_DAY_3 = 26
+    const val MIXIT_DAY_1 = 13
+    const val MIXIT_DAY_2 = 14
+    const val MIXIT_DAY_3 = 15
 
 
     val DATA_SYNC_INTERVAL: Long = BuildConfig.DATA_SYNCHRONIZATION_INTERVAL

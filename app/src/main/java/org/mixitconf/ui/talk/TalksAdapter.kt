@@ -45,11 +45,11 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorAccent), timeColor = android.R.color.white)
                     }
-                    PLANNING_INTRODUCTION_SESSION, PLANNING_LUNCH, PLANNING_ORGA_SPEECH, PLANNING_WELCOME -> {
+                    PLANNING_INTRODUCTION_SESSION, PLANNING_LUNCH, PLANNING_LUNCH2, PLANNING_ORGA_SPEECH, PLANNING_WELCOME -> {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorShadow))
                     }
-                    PLANNING_PAUSE_10_MIN, PLANNING_PAUSE_25_MIN, PLANNING_PAUSE_30_MIN -> {
+                    PLANNING_PAUSE_10_MIN, PLANNING_PAUSE_25_MIN, PLANNING_PAUSE_30_MIN, PLANNING_PAUSE_20_MIN -> {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorShadow))
                     }

@@ -31,9 +31,13 @@ object PlanningGenerator {
         create(context, Day.One, TalkFormat.PLANNING_PAUSE_25_MIN, 10, 15),
         create(context, Day.One, TalkFormat.PLANNING_PAUSE_10_MIN, 11, 30),
         create(context, Day.One, TalkFormat.PLANNING_LUNCH, 12, 30),
-        create(context, Day.One, TalkFormat.PLANNING_PAUSE_10_MIN, 15, 20),
-        create(context, Day.One, TalkFormat.PLANNING_PAUSE_30_MIN, 16, 20),
-        create(context, Day.One, TalkFormat.PLANNING_PARTY, 19, 0),
+        create(context, Day.One, TalkFormat.PLANNING_LUNCH2, 13, 20),
+
+        create(context, Day.One, TalkFormat.PLANNING_ORGA_SPEECH, 13, 55),
+        create(context, Day.One, TalkFormat.PLANNING_PAUSE_10_MIN, 15, 40),
+        create(context, Day.One, TalkFormat.PLANNING_PAUSE_20_MIN, 16, 40),
+        create(context, Day.One, TalkFormat.PLANNING_PAUSE_10_MIN, 17, 50),
+        create(context, Day.One, TalkFormat.PLANNING_PARTY, 19, 30),
 
         create(context, Day.Two, PLANNING_DAY, 8, 29, R.string.event_day2),
         create(context, Day.Two, TalkFormat.PLANNING_WELCOME, 8, 30),
@@ -42,8 +46,11 @@ object PlanningGenerator {
         create(context, Day.Two, TalkFormat.PLANNING_PAUSE_25_MIN, 10, 15),
         create(context, Day.Two, TalkFormat.PLANNING_PAUSE_10_MIN, 11, 30),
         create(context, Day.Two, TalkFormat.PLANNING_LUNCH, 12, 30),
-        create(context, Day.Two, TalkFormat.PLANNING_PAUSE_10_MIN, 15, 20),
-        create(context, Day.Two, TalkFormat.PLANNING_PAUSE_30_MIN, 16, 20),
+        create(context, Day.Two, TalkFormat.PLANNING_LUNCH2, 13, 20),
+        create(context, Day.Two, TalkFormat.PLANNING_ORGA_SPEECH, 13, 55),
+        create(context, Day.Two, TalkFormat.PLANNING_PAUSE_10_MIN, 15, 40),
+        create(context, Day.Two, TalkFormat.PLANNING_PAUSE_20_MIN, 16, 40),
+        create(context, Day.Two, TalkFormat.PLANNING_PAUSE_10_MIN, 17, 50),
         )
 
     private fun create(

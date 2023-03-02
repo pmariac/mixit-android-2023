@@ -8,14 +8,14 @@ plugins {
 
 ext.versionMajor = 3
 ext.versionMinor = 1
-ext.versionPatch = 0
+ext.versionPatch = 1
 
 android {
     compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "org.mixit.conf"
+        applicationId "org.mixit23.conf"
         minSdkVersion 28
         targetSdkVersion 33
         versionCode versionMajor * 100000 + versionMinor * 100 + versionPatch

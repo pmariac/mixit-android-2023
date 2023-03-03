@@ -23,7 +23,7 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
 
         override fun bindItem(item: Talk) {
             viewBinding.apply {
-                tvTalkItemName.text = if(item.format == PLANNING_DAY) item.title.uppercase() else item.title
+                tvTalkItemName.text = if (item.format == PLANNING_DAY) item.title.uppercase() else item.title
                 tvTalkItemTime.text = item.getTimeLabel(context.resources)
 
                 when (item.format) {
@@ -45,7 +45,7 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorAccent), timeColor = android.R.color.white)
                     }
-                    PLANNING_INTRODUCTION_SESSION, PLANNING_LUNCH, PLANNING_LUNCH2, PLANNING_ORGA_SPEECH, PLANNING_WELCOME -> {
+                    PLANNING_INTRODUCTION_SESSION, PLANNING_LUNCH, PLANNING_INTRODUCTION_MIXETTE, PLANNING_LUNCH2, PLANNING_ORGA_SPEECH, PLANNING_WELCOME -> {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorShadow))
                     }

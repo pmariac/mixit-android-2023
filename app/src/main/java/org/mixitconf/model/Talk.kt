@@ -57,7 +57,7 @@ data class Talk(
      * If time is elapsed we return a disabled color
      */
     fun getBackgroundColor(color: Int): Int =
-        if (Date().time > end.time) R.color.unknown else color
+        if (Date().time > endTime.time) R.color.unknown else color
 
     fun getTimeLabel(resources: Resources): String = String.format(
         resources.getString(R.string.talk_time_range),

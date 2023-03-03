@@ -131,4 +131,5 @@
 
     <string name="planning_notification_description">This talk will start in few minutes in room %s</string>
     <string name="talk_format_planning_pause_20">(Pause 20 min)</string>
+    <string name="talk_format_planning_introduction_mixette">Présentation des associations Mixette</string>
 </resources>

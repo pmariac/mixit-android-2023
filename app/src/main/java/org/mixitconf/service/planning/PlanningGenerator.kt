@@ -11,7 +11,6 @@ import org.mixitconf.model.enums.Room
 import org.mixitconf.model.enums.TalkFormat
 import org.mixitconf.model.enums.TalkFormat.PLANNING_DAY
 import org.mixitconf.toString
-import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.util.*
@@ -19,8 +18,7 @@ import java.util.*
 object PlanningGenerator {
     private enum class Day(val day: Int) {
         One(Properties.MIXIT_DAY_1),
-        Two(Properties.MIXIT_DAY_2),
-        Three(Properties.MIXIT_DAY_3)
+        Two(Properties.MIXIT_DAY_2)
     }
 
     fun generatePlanningEvents(context: Context): List<TalkApiDto> = listOf(

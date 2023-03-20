@@ -1,6 +1,5 @@
 package org.mixitconf.model
 
-import android.content.Context
 import android.content.res.Resources
 import androidx.room.Entity
 import androidx.room.Ignore

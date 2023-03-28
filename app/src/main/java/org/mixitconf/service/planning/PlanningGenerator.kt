@@ -24,7 +24,7 @@ object PlanningGenerator {
     fun generatePlanningEvents(context: Context): List<TalkApiDto> = listOf(
         create(context, Day.One, PLANNING_DAY, 8, 29, R.string.event_day1),
         create(context, Day.One, TalkFormat.PLANNING_WELCOME, 8, 30),
-        create(context, Day.One, TalkFormat.PLANNING_ORGA_SPEECH, 9, 15),
+        //create(context, Day.One, TalkFormat.PLANNING_ORGA_SPEECH, 9, 15),
         create(context, Day.One, TalkFormat.PLANNING_INTRODUCTION_SESSION, 10, 0),
         create(context, Day.One, TalkFormat.PLANNING_PAUSE_25_MIN, 10, 15),
         create(context, Day.One, TalkFormat.PLANNING_PAUSE_10_MIN, 11, 30),
@@ -38,7 +38,7 @@ object PlanningGenerator {
 
         create(context, Day.Two, PLANNING_DAY, 8, 29, R.string.event_day2),
         create(context, Day.Two, TalkFormat.PLANNING_WELCOME, 8, 30),
-        create(context, Day.Two, TalkFormat.PLANNING_ORGA_SPEECH, 9, 15),
+        //create(context, Day.Two, TalkFormat.PLANNING_ORGA_SPEECH, 9, 15),
         create(context, Day.Two, TalkFormat.PLANNING_INTRODUCTION_SESSION, 10, 0),
         create(context, Day.Two, TalkFormat.PLANNING_PAUSE_25_MIN, 10, 15),
         create(context, Day.Two, TalkFormat.PLANNING_PAUSE_10_MIN, 11, 30),

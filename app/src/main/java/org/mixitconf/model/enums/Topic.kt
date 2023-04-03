@@ -12,7 +12,10 @@ enum class Topic(val drawableResourse: Int) {
     tech(R.drawable.mxt_topic_tech),
     ethics(R.drawable.mxt_topic_ethics),
     lifestyle(R.drawable.mxt_topic_lifestyle),
-    unknown(R.drawable.mxt_topic_design);
+    other(R.drawable.mxt_topic_other),
+    onair(R.drawable.mxt_topic_on_air),
+    unknown(R.drawable.mxt_topic_design),
+    ;
 
     companion object {
         fun of(string: String?): Topic =

@@ -23,7 +23,7 @@ class SpeakersAdapter : SimpleListAdapter<Speaker, SpeakersAdapter.SpeakerViewHo
         override fun bindItem(item: Speaker) {
             viewBinding.apply {
                 speakerName.text = item.fullname
-                speakerBio.text = item.descriptionFr
+                speakerBio.text = item.descriptionFr?.replace("&#39", "'")
                 speakerImage.setSpeakerImage(item)
             }
         }

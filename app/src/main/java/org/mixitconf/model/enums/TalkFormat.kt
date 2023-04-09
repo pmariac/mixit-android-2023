@@ -10,7 +10,8 @@ enum class TalkFormat(val duration: Int, val label: Int) {
     RANDOM(25, R.string.talk_format_random),
     TALK(50, R.string.talk_format_talk),
     WORKSHOP(110, R.string.talk_format_workshop),
-
+    INTERVIEW(25, R.string.talk_format_interview),
+    ON_AIR(25, R.string.talk_format_interview),
 
     PLANNING_WELCOME(45, R.string.talk_format_planning_reception),
     PLANNING_INTRODUCTION_SESSION(15, R.string.talk_format_planning_introduction_session),
@@ -26,6 +27,6 @@ enum class TalkFormat(val duration: Int, val label: Int) {
     PLANNING_DAY(0, R.string.talk_format_planning_day);
 
     val isTalk: Boolean
-        get() = listOf(TALK, WORKSHOP, KEYNOTE, RANDOM, KEYNOTE_SURPRISE, CLOSING_SESSION, LIGHTNING_TALK)
+        get() = listOf(TALK, WORKSHOP, KEYNOTE, RANDOM, KEYNOTE_SURPRISE, CLOSING_SESSION, LIGHTNING_TALK, INTERVIEW, ON_AIR)
             .contains(this)
 }

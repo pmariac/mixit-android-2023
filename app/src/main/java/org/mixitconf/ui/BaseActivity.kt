@@ -79,6 +79,8 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
                 }
             }
             R.id.navigation_home -> navController.navigate(R.id.navigation_home)
+            R.id.navigation_speakers -> navController.navigate(R.id.navigation_speakers)
+            R.id.navigation_onair -> navController.navigate(R.id.navigation_onair)
         }
         return super.onOptionsItemSelected(item)
     }

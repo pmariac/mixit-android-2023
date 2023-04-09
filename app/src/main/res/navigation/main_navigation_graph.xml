@@ -43,6 +43,13 @@
         android:label="@string/title_fragment_talks" >
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_onair"
+        android:name="org.mixitconf.ui.talk.TalksOnAirFragment"
+        android:label="@string/title_fragment_onair"
+        tools:layout="@layout/fragment_talks">
+    </fragment>
+
     <action
         android:id="@+id/action_talksFragment_to_talkDetailFragment"
         app:destination="@id/navigation_talk_detail" >

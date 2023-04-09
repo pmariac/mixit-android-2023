@@ -6,6 +6,7 @@
     <string name="title_fragment_about">A propos</string>
     <string name="title_fragment_favorites">Favoris</string>
     <string name="title_fragment_talks">Talks</string>
+    <string name="title_fragment_onair">MiXiT on air</string>
     <string name="title_fragment_speakers">Speakers</string>
     <string name="event_dates">13 et 14 avril 2023</string>
     <string name="event_day1">Jeudi 13 avril</string>
@@ -19,6 +20,7 @@
     <string name="talk_format_keynote">Keynote</string>
     <string name="talk_format_lightningtak">Lightning talk</string>
     <string name="talk_format_random">Talk</string>
+    <string name="talk_format_interview">On air</string>
     <string name="talk_format_talk">Talk</string>
     <string name="talk_format_workshop">Workshop</string>
     <string name="talk_format_keynote_surprise">Surprise keynote</string>

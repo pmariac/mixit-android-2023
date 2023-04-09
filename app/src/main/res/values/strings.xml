@@ -8,6 +8,7 @@
     <string name="title_fragment_about">About</string>
     <string name="title_fragment_talks">Talks</string>
     <string name="title_fragment_favorites">Favorites</string>
+    <string name="title_fragment_onair">MiXiT on air</string>
     <string name="title_fragment_speakers">Speakers</string>
     <string name="title_twitter_link">Our news on Twitter</string>
     <string name="title_activity_login">Sign in</string>
@@ -28,6 +29,7 @@
     <string name="talk_format_lightningtak">Lightning talk</string>
     <string name="talk_format_random">Talk</string>
     <string name="talk_format_talk">Talk</string>
+    <string name="talk_format_interview">On air</string>
     <string name="talk_format_workshop">Workshop</string>
     <string name="talk_format_planning_reception">Reception (breakfast)</string>
     <string name="talk_format_planning_introduction_session">Session introduction by speakers</string>

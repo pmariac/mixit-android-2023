@@ -3,10 +3,8 @@ package org.mixitconf.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.mixitconf.MainNavigationGraphDirections
@@ -14,7 +12,6 @@ import org.mixitconf.Properties
 import org.mixitconf.R
 import org.mixitconf.databinding.ActivityMainBinding
 import org.mixitconf.ui.BaseActivity
-import org.mixitconf.ui.talk.TalksFragment
 import org.mixitconf.workers.DataSynchronizationWorker
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -36,6 +33,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             R.id.navigation_home,
             R.id.navigation_talks,
             R.id.navigation_speakers,
+            R.id.navigation_onair,
             R.id.navigation_favorites)
         )
     }

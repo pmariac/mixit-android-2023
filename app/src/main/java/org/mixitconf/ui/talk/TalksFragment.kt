@@ -12,12 +12,13 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentTalksBinding
 import org.mixitconf.model.Talk
+import org.mixitconf.model.enums.TalkFormat
 import org.mixitconf.ui.BaseFragment
 import java.util.Date
 
 open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
 
-    private var listState: Parcelable? = null
+    protected var listState: Parcelable? = null
 
     protected val viewModel: TalksViewModel by sharedViewModel()
 
@@ -62,13 +63,14 @@ open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
 
     protected open fun search() {
         viewModel.search().observe(viewLifecycleOwner) { talks ->
-            talksAdpater.setItems(talks)
+            talksAdpater.setItems(talks.filterNot { listOf(TalkFormat.ON_AIR, TalkFormat.INTERVIEW).contains(it.format) })
             if (listState == null) {
                 val index = talks.indexOfFirst { talk -> Date().let { talk.startTime > it } }
                 viewBinding.rvTalks.scrollToPosition(index)
             }
         }
     }
+
 
     private fun openTalk(talk: Talk) {
         if (talk.format.isTalk) {

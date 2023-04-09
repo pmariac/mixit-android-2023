@@ -45,6 +45,10 @@ class TalksAdapter : SimpleListAdapter<Talk, TalksAdapter.TalkViewHolder>() {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorAccent), timeColor = android.R.color.white)
                     }
+                    INTERVIEW, ON_AIR -> {
+                        setTalkDetail(item)
+                        setColors(item.getBackgroundColor(R.color.white))
+                    }
                     PLANNING_INTRODUCTION_SESSION, PLANNING_LUNCH, PLANNING_INTRODUCTION_MIXETTE, PLANNING_LUNCH2, PLANNING_ORGA_SPEECH, PLANNING_WELCOME -> {
                         setNonTalkDetail()
                         setColors(item.getBackgroundColor(R.color.colorShadow))

@@ -13,8 +13,7 @@
             android:title="@string/title_fragment_favorites" />
 
     <item
-            android:id="@+id/navigation_speakers"
+            android:id="@+id/navigation_onair"
             android:icon="@drawable/mxt_icon_speaker"
-            android:title="@string/title_fragment_speakers" />
-
+            android:title="@string/title_fragment_onair" />
 </menu>

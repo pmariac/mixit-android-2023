@@ -2,12 +2,16 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools" tools:context=".HomeActivity">
 
-
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/mxt_icon_home"
         android:title="@string/app_name"
         app:showAsAction="ifRoom|collapseActionView"/>
+
+    <item
+        android:id="@+id/navigation_speakers"
+        android:icon="@drawable/mxt_icon_speaker"
+        android:title="@string/title_fragment_speakers" />
 
     <item
             android:id="@+id/navigation_twitter"

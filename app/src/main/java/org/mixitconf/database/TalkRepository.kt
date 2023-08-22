@@ -1,6 +1,7 @@
 package org.mixitconf.database
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 import org.mixitconf.model.Talk
 
 @Dao
@@ -9,7 +10,7 @@ interface TalkRepository {
     suspend fun create(talk: Talk)
 
     @Query("select * from Talk")
-    suspend fun readAll(): List<Talk>
+    fun readAll(): Flow<List<Talk>>
 
     @Query("select * from Talk where favorite = 1")
     suspend fun readFavorites(): List<Talk>

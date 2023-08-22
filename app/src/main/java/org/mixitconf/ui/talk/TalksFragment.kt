@@ -5,9 +5,12 @@ import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.mixitconf.MainNavigationGraphDirections
 import org.mixitconf.databinding.FragmentTalksBinding
@@ -62,13 +65,13 @@ open class TalksFragment : BaseFragment<FragmentTalksBinding>() {
     }
 
     protected open fun search() {
-        viewModel.search().observe(viewLifecycleOwner) { talks ->
+        viewModel.allTalksByDate.onEach { talks ->
             talksAdpater.setItems(talks.filterNot { listOf(TalkFormat.ON_AIR, TalkFormat.INTERVIEW).contains(it.format) })
             if (listState == null) {
                 val index = talks.indexOfFirst { talk -> Date().let { talk.startTime > it } }
                 viewBinding.rvTalks.scrollToPosition(index)
             }
-        }
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
     }
 
 
